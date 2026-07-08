@@ -93,40 +93,50 @@ p strong{font-weight:500;color:#1a1a2e}
 .py .lb{font-family:'Inter',sans-serif;display:block;font-size:clamp(.55rem,.7vw,.6rem);font-weight:600;color:#1a1a2e;letter-spacing:.05em}
 .py .sb{font-family:'Inter',sans-serif;font-size:clamp(.5rem,.6vw,.55rem);color:#8a9aaa}
 
-/* TABELA DE PRECOS */
-.tb-wrap{width:100%;overflow-x:auto;margin:.5rem auto}
-.tb{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:clamp(.7rem,1vw,.82rem);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.04)}
-.tb th{padding:clamp(.4rem,.6vw,.6rem) clamp(.3rem,.5vw,.5rem);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(.55rem,.75vw,.65rem)}
-.tb td{padding:clamp(.35rem,.5vw,.5rem) clamp(.3rem,.5vw,.5rem);border-bottom:1px solid rgba(0,0,0,.04)}
-.tb td:last-child,.tb th:last-child{border-left:1px solid rgba(0,0,0,.04)}
-.tb-h-ant{background:linear-gradient(135deg,#e67e22,#d35400);color:#fff}
-.tb-h-blu{background:linear-gradient(135deg,#1a6fa0,#4a9bc7);color:#fff}
-.tb-h-desc{background:linear-gradient(135deg,#c7a26b,#b8955a);color:#fff}
-.tb-row{background:#fff}
-.tb-row-alt{background:rgba(74,155,199,.03)}
-.tb .tag-desc{display:inline-block;padding:.1rem .5rem;border-radius:50px;font-size:clamp(.5rem,.7vw,.6rem);font-weight:700;color:#fff}
-.tb .tag-desc.t5{background:#27ae60}
-.tb .tag-desc.t10{background:#c0392b}
-.tb .ant-valor{color:#e67e22;font-weight:700}
-.tb .blu-valor{color:#1a6fa0;font-weight:700}
-.desk-info{text-align:center;padding:.6rem;border-radius:12px;background:rgba(199,162,107,.06);border:1px solid rgba(199,162,107,.1);font-size:clamp(.7rem,.9vw,.8rem);color:#4a5a6a;max-width:600px;margin:.3rem auto}
-.desk-info strong{color:#1a1a2e}
-.desk-info .pix-gold{color:#c7a26b;font-weight:700}
+/* CARD PRODUTO LADO A LADO */
+.prod-card-duplo{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;width:100%;max-width:700px;margin:0 auto}
+.prod-card-item{flex:1;min-width:200px;max-width:310px;border-radius:16px;padding:1.5rem 1.2rem;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.prod-card-item.ant{background:#fff;border:1px solid rgba(230,126,34,.12)}
+.prod-card-item.bluwey{background:#fff;border:1px solid rgba(26,111,160,.12)}
+.prod-card-item .prod-img{width:80px;height:100px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto .6rem;font-weight:900;font-size:1.1rem;color:#fff}
+.prod-card-item.ant .prod-img{background:linear-gradient(135deg,#e67e22,#d35400)}
+.prod-card-item.bluwey .prod-img{background:linear-gradient(135deg,#1a6fa0,#4a9bc7)}
+.prod-card-item .prod-nome{font-weight:800;font-size:clamp(1rem,1.3vw,1.15rem);color:#1a1a2e;margin-bottom:.15rem}
+.prod-card-item .prod-sub{font-size:clamp(.65rem,.8vw,.72rem);color:#8a9aaa;margin-bottom:.4rem}
+.prod-card-item .prod-preco-ant{font-size:clamp(.7rem,.85vw,.78rem);color:#b0b0b0;text-decoration:line-through}
+.prod-card-item .prod-preco-atual{font-weight:900;font-size:clamp(1.4rem,2.2vw,1.8rem);color:#1a1a2e;line-height:1.2}
+.prod-card-item.ant .prod-preco-atual{color:#d35400}
+.prod-card-item.bluwey .prod-preco-atual{color:#1a6fa0}
 
-.prod-abaixo{display:flex;flex-direction:column;gap:1.5rem;width:100%;max-width:700px;margin:0 auto}
-.prod-card-abaixo{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.04);flex-wrap:wrap;gap:.8rem}
-.prod-card-abaixo.ant{background:linear-gradient(135deg,#fef5ef,#fdf0e6);border:1px solid rgba(230,126,34,.12)}
-.prod-card-abaixo.bluwey{background:linear-gradient(135deg,#eef5fa,#e4f0f8);border:1px solid rgba(26,111,160,.12)}
-.prod-card-abaixo .info{display:flex;align-items:center;gap:.8rem}
-.prod-card-abaixo .thumb{width:50px;height:65px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.9rem;color:#fff;flex-shrink:0}
-.prod-card-abaixo.ant .thumb{background:linear-gradient(135deg,#e67e22,#d35400)}
-.prod-card-abaixo.bluwey .thumb{background:linear-gradient(135deg,#1a6fa0,#4a9bc7)}
-.prod-card-abaixo .nome-prod{font-weight:700;font-size:clamp(.85rem,1.2vw,1rem);color:#1a1a2e}
-.prod-card-abaixo .preco-prod{font-weight:900;font-size:clamp(1.2rem,2vw,1.6rem)}
-.prod-card-abaixo.ant .preco-prod{color:#e67e22}
-.prod-card-abaixo.bluwey .preco-prod{color:#1a6fa0}
-.tabelas-duas{display:flex;gap:1.2rem;width:100%;flex-wrap:wrap;justify-content:center}
-.tabela-wrap{flex:1;min-width:280px;max-width:380px}
+/* TABELA CLEAN / SERIA */
+.tabelas-duas{display:flex;gap:2rem;width:100%;flex-wrap:wrap;justify-content:center}
+.tabela-wrap{flex:1;min-width:260px;max-width:360px}
+.tb{width:100%;border-collapse:collapse;font-family:'Inter',sans-serif;font-size:clamp(.68rem,.9vw,.78rem)}
+.tb th{padding:clamp(.4rem,.55vw,.55rem) clamp(.4rem,.5vw,.6rem);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:clamp(.55rem,.7vw,.6rem);text-align:center}
+.tb td{padding:clamp(.35rem,.45vw,.5rem) clamp(.3rem,.4vw,.5rem);text-align:center;border-bottom:1px solid #eee}
+.tb-h-ant{background:#d35400;color:#fff}
+.tb-h-blu{background:#1a6fa0;color:#fff}
+.tb-h-valor{background:#f0f0f0;color:#1a1a2e;border-bottom:2px solid #ddd}
+.tb-row td{border-bottom:1px solid #f0f0f0}
+.tb-row.ant-td .qtd{color:#d35400;font-weight:700}
+.tb-row.blu-td .qtd{color:#1a6fa0;font-weight:700}
+.tb-row .normal{color:#4a5a6a}
+.tb-row .destaque{font-weight:700}
+.tb-row.ant-td .destaque{color:#d35400}
+.tb-row.blu-td .destaque{color:#1a6fa0}
+.tb-row .desc-tag{display:inline-block;padding:.08rem .5rem;border-radius:50px;font-size:clamp(.5rem,.6vw,.6rem);font-weight:700;color:#fff;margin-left:.2rem}
+.tb-row .desc-tag.t5{background:#27ae60}
+.tb-row .desc-tag.t10{background:#c0392b}
+
+/* DESCONTO DESTAQUE */
+.desk-destaque{text-align:center;padding:1rem 1.5rem;border-radius:16px;background:linear-gradient(135deg,#0f2b3d,#1a4a6a);color:#fff;max-width:620px;margin:.5rem auto;box-shadow:0 8px 30px rgba(15,43,61,.15)}
+.desk-destaque .tit{font-weight:800;font-size:clamp(1rem,1.5vw,1.3rem);margin-bottom:.2rem;letter-spacing:-.01em}
+.desk-destaque .tit .gold{color:#c7a26b}
+.desk-destaque .regras{font-weight:300;font-size:clamp(.75rem,1vw,.88rem);color:rgba(255,255,255,.7);line-height:1.7}
+.desk-destaque .regras strong{color:#fff;font-weight:600}
+.desk-destaque .badge-desc{display:inline-block;padding:.15rem .8rem;border-radius:50px;font-weight:700;font-size:clamp(.65rem,.85vw,.75rem)}
+.desk-destaque .badge-desc.b5{background:#27ae60;color:#fff;margin:0 .2rem}
+.desk-destaque .badge-desc.b10{background:#c0392b;color:#fff;margin:0 .2rem}
 
 @media(max-width:600px){
 .slide{padding:1rem;min-height:auto;padding-top:2rem;padding-bottom:2rem}
@@ -304,80 +314,73 @@ h1{font-size:2rem}h2{font-size:1.3rem}
 <!-- S11 - INVESTIMENTO -->
 <section class="slide" style="background:#fff;position:relative">
   <div class="pn">
-    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1400&q=80" alt="" style="opacity:.06;object-fit:cover" onerror="this.style.display='none'">
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1400&q=80" alt="" style="opacity:.05;object-fit:cover" onerror="this.style.display='none'">
   </div>
   <div class="in" style="align-items:center;text-align:center;z-index:2">
     <div class="lb">Investimento</div>
     <h2>Condições <span class="g-gold">especiais</span></h2>
 
-    <!-- PRODUTOS UM ABAIXO DO OUTRO -->
-    <div class="prod-abaixo">
-      <div class="prod-card-abaixo ant">
-        <div class="info">
-          <div class="thumb">AN-T</div>
-          <div>
-            <div class="nome-prod">AN-T — 30 cápsulas</div>
-            <div style="font-size:clamp(.65rem,.8vw,.72rem);color:#8a9aaa">Saúde articular &amp; bem-estar</div>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:clamp(.65rem,.8vw,.72rem);color:#8a9aaa;text-decoration:line-through">De R$ 189,90</div>
-          <div class="preco-prod">R$ 144,27</div>
-        </div>
+    <!-- PRODUTOS LADO A LADO COM IMAGEM -->
+    <div class="prod-card-duplo">
+      <div class="prod-card-item ant">
+        <div class="prod-img">AN-T</div>
+        <div class="prod-nome">AN-T</div>
+        <div class="prod-sub">30 cápsulas • Saúde articular</div>
+        <div class="prod-preco-ant">De R$ 189,90</div>
+        <div class="prod-preco-atual">R$ 144,27</div>
       </div>
-
-      <div class="prod-card-abaixo bluwey">
-        <div class="info">
-          <div class="thumb">BLU</div>
-          <div>
-            <div class="nome-prod">Bluwey — 30 cápsulas</div>
-            <div style="font-size:clamp(.65rem,.9vw,.72rem);color:#8a9aaa">Saúde sexual &amp; energia</div>
-          </div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:clamp(.65rem,.8vw,.72rem);color:#8a9aaa;text-decoration:line-through">De R$ 189,90</div>
-          <div class="preco-prod">R$ 143,98</div>
-        </div>
+      <div class="prod-card-item bluwey">
+        <div class="prod-img">BLU</div>
+        <div class="prod-nome">Bluwey</div>
+        <div class="prod-sub">30 cápsulas • Saúde masculina</div>
+        <div class="prod-preco-ant">De R$ 189,90</div>
+        <div class="prod-preco-atual">R$ 143,98</div>
       </div>
     </div>
 
-    <div class="desk-info">
-      💰 <strong>Desconto progressivo no PIX:</strong><br>
-      Compre <strong>2 unidades</strong> e ganhe <span class="pix-gold">5% OFF</span> •
-      Compre <strong>3 ou mais</strong> e ganhe <span class="pix-gold">10% OFF</span>
-    </div>
-
+    <!-- TABELAS LADO A LADO - CLEAN -->
     <div class="tabelas-duas">
+      <!-- AN-T -->
       <div class="tabela-wrap">
         <table class="tb">
           <thead>
-            <tr><th class="tb-h-ant" colspan="3">🟠 AN-T</th></tr>
-            <tr><th class="tb-h-desc">Unid.</th><th class="tb-h-desc">Valor</th><th class="tb-h-desc">PIX c/ desconto</th></tr>
+            <tr><th class="tb-h-ant" colspan="3">AN-T</th></tr>
+            <tr><th class="tb-h-valor">Unid.</th><th class="tb-h-valor">Valor</th><th class="tb-h-valor">PIX c/ desc.</th></tr>
           </thead>
           <tbody>
-            <tr class="tb-row"><td><strong>1</strong></td><td class="ant-valor">R$ 144,27</td><td class="ant-valor">R$ 144,27</td></tr>
-            <tr class="tb-row-alt"><td><strong>2</strong></td><td class="ant-valor">R$ 288,54</td><td class="ant-valor">R$ 274,11 <span class="tag-desc t5">5% OFF</span></td></tr>
-            <tr class="tb-row"><td><strong>3</strong></td><td class="ant-valor">R$ 432,81</td><td class="ant-valor">R$ 389,53 <span class="tag-desc t10">10% OFF</span></td></tr>
-            <tr class="tb-row-alt"><td><strong>4</strong></td><td class="ant-valor">R$ 577,08</td><td class="ant-valor">R$ 519,37 <span class="tag-desc t10">10% OFF</span></td></tr>
-            <tr class="tb-row"><td><strong>5</strong></td><td class="ant-valor">R$ 721,35</td><td class="ant-valor">R$ 649,22 <span class="tag-desc t10">10% OFF</span></td></tr>
+            <tr class="tb-row ant-td"><td class="qtd">1</td><td class="normal">R$ 144,27</td><td class="destaque">R$ 144,27</td></tr>
+            <tr class="tb-row ant-td"><td class="qtd">2</td><td class="normal">R$ 288,54</td><td class="destaque">R$ 274,11 <span class="desc-tag t5">5%</span></td></tr>
+            <tr class="tb-row ant-td"><td class="qtd">3</td><td class="normal">R$ 432,81</td><td class="destaque">R$ 389,53 <span class="desc-tag t10">10%</span></td></tr>
+            <tr class="tb-row ant-td"><td class="qtd">4</td><td class="normal">R$ 577,08</td><td class="destaque">R$ 519,37 <span class="desc-tag t10">10%</span></td></tr>
+            <tr class="tb-row ant-td"><td class="qtd">5</td><td class="normal">R$ 721,35</td><td class="destaque">R$ 649,22 <span class="desc-tag t10">10%</span></td></tr>
           </tbody>
         </table>
       </div>
 
+      <!-- BLUWEY -->
       <div class="tabela-wrap">
         <table class="tb">
           <thead>
-            <tr><th class="tb-h-blu" colspan="3">🔵 Bluwey</th></tr>
-            <tr><th class="tb-h-desc">Unid.</th><th class="tb-h-desc">Valor</th><th class="tb-h-desc">PIX c/ desconto</th></tr>
+            <tr><th class="tb-h-blu" colspan="3">Bluwey</th></tr>
+            <tr><th class="tb-h-valor">Unid.</th><th class="tb-h-valor">Valor</th><th class="tb-h-valor">PIX c/ desc.</th></tr>
           </thead>
           <tbody>
-            <tr class="tb-row"><td><strong>1</strong></td><td class="blu-valor">R$ 143,98</td><td class="blu-valor">R$ 143,98</td></tr>
-            <tr class="tb-row-alt"><td><strong>2</strong></td><td class="blu-valor">R$ 287,96</td><td class="blu-valor">R$ 273,56 <span class="tag-desc t5">5% OFF</span></td></tr>
-            <tr class="tb-row"><td><strong>3</strong></td><td class="blu-valor">R$ 431,94</td><td class="blu-valor">R$ 388,75 <span class="tag-desc t10">10% OFF</span></td></tr>
-            <tr class="tb-row-alt"><td><strong>4</strong></td><td class="blu-valor">R$ 575,92</td><td class="blu-valor">R$ 518,33 <span class="tag-desc t10">10% OFF</span></td></tr>
-            <tr class="tb-row"><td><strong>5</strong></td><td class="blu-valor">R$ 719,90</td><td class="blu-valor">R$ 647,91 <span class="tag-desc t10">10% OFF</span></td></tr>
+            <tr class="tb-row blu-td"><td class="qtd">1</td><td class="normal">R$ 143,98</td><td class="destaque">R$ 143,98</td></tr>
+            <tr class="tb-row blu-td"><td class="qtd">2</td><td class="normal">R$ 287,96</td><td class="destaque">R$ 273,56 <span class="desc-tag t5">5%</span></td></tr>
+            <tr class="tb-row blu-td"><td class="qtd">3</td><td class="normal">R$ 431,94</td><td class="destaque">R$ 388,75 <span class="desc-tag t10">10%</span></td></tr>
+            <tr class="tb-row blu-td"><td class="qtd">4</td><td class="normal">R$ 575,92</td><td class="destaque">R$ 518,33 <span class="desc-tag t10">10%</span></td></tr>
+            <tr class="tb-row blu-td"><td class="qtd">5</td><td class="normal">R$ 719,90</td><td class="destaque">R$ 647,91 <span class="desc-tag t10">10%</span></td></tr>
           </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- DESCONTO DESTAQUE -->
+    <div class="desk-destaque">
+      <div class="tit">💰 Desconto <span class="gold">Progressivo</span> no PIX</div>
+      <div class="regras">
+        Compre <strong>2 unidades</strong> → <span class="badge-desc b5">5% OFF</span> &nbsp;|&nbsp;
+        Compre <strong>3 ou mais</strong> → <span class="badge-desc b10">10% OFF</span>
       </div>
     </div>
 
