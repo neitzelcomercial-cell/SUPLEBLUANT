@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <title>BluAnt — Suplementos Naturais Premium</title>
+  <meta name="description" content="AN-T e Bluwey: Suplementos premium 100% naturais para saúde, energia e bem-estar. Fórmulas inovadoras para qualidade de vida." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    // Força recarregar se vier do cache (versão v7.0)
+    (function() {
+      var v = localStorage.getItem('bluant_v');
+      if (v !== '7') {
+        localStorage.setItem('bluant_v', '7');
+        window.location.reload(true);
+      }
+    })();
+  </script>
+  <style>
+    :root {
+      --primary: #0f2b3d;
+      --primary-light: #1a4a6a;
+      --accent: #1a6fa0;
+      --accent-light: #4a9bc7;
+      --accent-pale: #e4f0f8;
+      --gold: #c7a26b;
+      --gold-light: #e8d5b7;
+      --gold-pale: #f5ede1;
+      --bg: #fafbfc;
+      --card: #ffffff;
+      --card-border: rgba(15,43,61,0.08);
+      --shadow-sm: 0 2px 8px rgba(15,43,61,0.06);
+      --shadow-md: 0 8px 32px rgba(15,43,61,0.1);
+      --shadow-lg: 0 20px 60px rgba(15,43,61,0.12);
+      --text: #1a2a3a;
+      --text-light: #4a5a6a;
+      --text-muted: #8a9aaa;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --ant-color: #2d6a4f;
+      --ant-light: #40916c;
+      --ant-pale: #e8f5ee;
+      --bluwey-color: #1a6fa0;
+      --bluwey-light: #4a9bc7;
+      --bluwey-pale: #e4f0f8;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 1.5rem; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .section { padding: 5rem 0; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: .8rem;
+      color: var(--text);
+    }
+    .text-grande { font-size: 1.1rem; line-height: 1.8; }
+    .text-destaque-idade {
+      background: linear-gradient(135deg, var(--gold-pale), #fff8ee);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .text-destaque-idade h3 { font-size: 1.6rem; color: var(--text); margin-bottom: .5rem; }
+    .text-destaque-idade p { font-size: .95rem; color: var(--text-light); max-width: 480px; margin: 0 auto; }
+    .section-title .gold { color: var(--gold); }
+    .section-title .accent { color: var(--accent); }
+    .section-desc {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 20px rgba(26,111,160,.25);
+      cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,111,160,.35); }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 15px rgba(37,211,102,.25);
+    }
+    .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: .9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .4s ease;
+      background: transparent;
+    }
+    .header.scrolled {
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 20px rgba(0,0,0,.06);
+      padding: .6rem 2rem;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+    }
+    .header-logo-img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
+    .header-logo-text { font-weight: 800; font-size: 1.05rem; color: var(--text); }
+    .header-logo-text span { color: var(--accent); }
+    .nav { display: flex; gap: 1.8rem; align-items: center; }
+    .nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .nav a:hover { color: var(--accent); }
+    .nav .nav-whatsapp {
+      background: #25D366;
+      color: #fff !important;
+      padding: .5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .78rem;
+    }
+    .nav .nav-whatsapp:hover { background: #1da851; transform: translateY(-1px); }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+    .nav-mobile.active { opacity: 1; pointer-events: all; }
+    .nav-mobile a { color: var(--text); text-decoration: none; font-size: 1.3rem; font-weight: 600; }
+    .nav-mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text); font-size: 2rem; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 1.5rem 4rem;
+      background: #0f2b3d;
+    }
+    .hero-img-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-img-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      filter: blur(2px);
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(15,43,61,0.85) 0%, rgba(26,74,106,0.7) 50%, rgba(15,43,61,0.85) 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,111,160,0.1) 0%, transparent 70%);
+      top: -200px; right: -150px;
+      z-index: 0;
+      animation: heroGlow 10s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(199,162,107,0.08) 0%, transparent 70%);
+      bottom: -150px; left: -100px;
+      z-index: 0;
+      animation: heroGlow2 12s ease-in-out infinite alternate;
+    }
+    @keyframes heroGlow {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(-60px,40px) scale(1.15); }
+    }
+    @keyframes heroGlow2 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(50px,-30px) scale(1.2); }
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 720px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(199,162,107,.15);
+      border: 1px solid rgba(199,162,107,.35);
+      border-radius: 50px;
+      padding: .35rem 1rem;
+      font-size: .7rem;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 3.6rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero h1 .gold { color: var(--gold); }
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.7);
+      margin: 0 auto 2rem;
+      max-width: 540px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .hero-btn-branco {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: #fff;
+      color: #0f2b3d;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+      min-width: 260px;
+    }
+    .hero-btn-branco:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,255,255,.2); }
+    .hero-btn-laranja {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+      min-width: 260px;
+      box-shadow: 0 4px 15px rgba(230,126,34,.3);
+    }
+    .hero-btn-laranja {
+      animation: pulseLaranja 2s ease-in-out infinite;
+    }
+    .hero-btn-laranja:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(230,126,34,.4); animation: none; }
+    @keyframes pulseLaranja {
+      0%, 100% { box-shadow: 0 4px 15px rgba(230,126,34,.3); transform: scale(1); }
+      50% { box-shadow: 0 8px 30px rgba(230,126,34,.55); transform: scale(1.03); }
+    }
+    .hero-btn-azul {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+      min-width: 260px;
+      box-shadow: 0 4px 15px rgba(26,111,160,.25);
+    }
+    .hero-btn-azul:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,111,160,.35); }
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+    }
+    .hero-trust-item i { color: var(--gold); font-size: .85rem; }
+
+    /* HERO CTA ESPECIAL */
+    .hero-cta-especial {
+      background: linear-gradient(135deg, var(--gold), #d4af37);
+      color: #0f2b3d;
+      border: none;
+      border-radius: 50px;
+      padding: 1.1rem 2.8rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      box-shadow: 0 8px 30px rgba(199,162,107,.4);
+      transition: all .3s ease;
+      animation: pulseCta 2s ease-in-out infinite;
+    }
+    .hero-cta-especial:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 40px rgba(199,162,107,.5); animation: none; }
+    @keyframes pulseCta {
+      0%, 100% { box-shadow: 0 8px 30px rgba(199,162,107,.4); }
+      50% { box-shadow: 0 8px 50px rgba(199,162,107,.65); }
+    }
+    .hero-cta-sub {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: .85rem;
+      color: rgba(255,255,255,.5);
+    }
+    .hero-cta-sub i { color: var(--gold); }
+
+    /* OFERTA — COMPRA RAPIDA */
+    .oferta { padding: 5rem 0; background: linear-gradient(135deg, var(--gold-pale), #fff8ee, var(--gold-pale)); }
+    .oferta-box {
+      background: #fff;
+      border: 2px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      box-shadow: 0 20px 60px rgba(199,162,107,.15);
+      text-align: center;
+    }
+    .oferta-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #c0392b, #e74c3c);
+      color: #fff;
+      padding: .3rem 1.2rem;
+      border-radius: 50px;
+      font-size: .7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: .8rem;
+    }
+    .oferta-box h2 { font-size: 2rem; font-weight: 800; color: var(--text); margin-bottom: .3rem; }
+    .oferta-box h2 .gold { color: var(--gold); }
+    .oferta-desc { color: var(--text-light); font-size: .95rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .oferta-preco-antigo { font-size: 1.2rem; color: var(--text-muted); text-decoration: line-through; }
+    .oferta-preco-atual { font-size: 2.8rem; font-weight: 900; color: var(--accent); line-height: 1.1; }
+    .oferta-economia {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      padding: .2rem 1rem;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 700;
+      margin: .5rem 0 1rem;
+    }
+    .oferta-box .produto-beneficios { max-width: 400px; margin: 0 auto; text-align: left; justify-content: center; }
+    .oferta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: 1.1rem 2.5rem;
+      background: linear-gradient(135deg, #25D366, #1da851);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all .3s;
+      box-shadow: 0 8px 25px rgba(37,211,102,.3);
+      margin-top: .8rem;
+    }
+    .oferta-btn:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 35px rgba(37,211,102,.4); }
+
+    /* DEPOIMENTOS */
+    .depoimentos { padding: 5rem 0; background: var(--bg); }
+    .depo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 3rem; }
+    .depo-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .depo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .depo-estrelas { color: var(--gold); font-size: .85rem; margin-bottom: .6rem; letter-spacing: 2px; }
+    .depo-texto {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .depo-texto i { color: var(--gold); opacity: .4; font-size: .8rem; margin-right: .3rem; }
+    .depo-autor {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+    .depo-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-pale), var(--bluwey-pale));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--accent);
+    }
+    .depo-nome { font-weight: 600; font-size: .85rem; color: var(--text); }
+    .depo-idade { font-size: .75rem; color: var(--text-muted); }
+
+    /* TRUST BANNER */
+    .trust-banner { background: var(--primary); padding: 1.2rem 0; }
+    .trust-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: rgba(255,255,255,.85);
+      font-size: .78rem;
+      font-weight: 500;
+    }
+    .trust-item i { color: var(--gold); font-size: .9rem; }
+
+    /* SOBRE */
+    .sobre { padding: 5rem 0; background: var(--bg); }
+    .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+    .sobre-visual { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .sobre-visual img { width: 100%; display: block; }
+    .sobre-text h2 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .sobre-text h2 .accent { color: var(--accent); }
+    .sobre-text p { color: var(--text-light); line-height: 1.8; margin-bottom: .8rem; font-size: .92rem; }
+    .sobre-highlight {
+      border-left: 3px solid var(--gold);
+      padding: .8rem 1.2rem;
+      margin: 1.2rem 0;
+      background: var(--gold-pale);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: .88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .sobre-grid-mini { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 1.5rem; }
+    .sobre-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      background: rgba(26,111,160,.05);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: .82rem;
+    }
+    .sobre-item-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    /* PRODUTOS */
+    .produtos { padding: 5rem 0; background: linear-gradient(180deg, var(--bg), #f0f5f9, var(--bg)); }
+    .produtos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .produto-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all .4s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .produto-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(15,43,61,.15); }
+    .produto-img {
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .produto-card.ant .produto-img { background: linear-gradient(135deg, var(--ant-pale), #d0e8dc); }
+    .produto-card.bluwey .produto-img { background: linear-gradient(135deg, var(--bluwey-pale), #d0e4f0); }
+    .produto-card.ant .produto-btn-comprar { background: linear-gradient(135deg, var(--ant-color), var(--ant-light)); }
+    .produto-card.ant .produto-btn-comprar:hover { box-shadow: 0 4px 15px rgba(45,106,79,.3); }
+    .produto-card.bluwey .produto-btn-comprar { background: linear-gradient(135deg, var(--bluwey-color), var(--bluwey-light)); }
+    .produto-card.bluwey .produto-btn-comprar:hover { box-shadow: 0 4px 15px rgba(26,111,160,.3); }
+    .produto-pack {
+      width: 120px; height: 160px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .produto-pack.ant-pack { background: linear-gradient(160deg, #1a3a2a, #2d6a4f, #40916c); border: 2px solid rgba(45,106,79,.3); }
+    .produto-pack.bluwey-pack { background: linear-gradient(160deg, #0f2b3d, #1a6fa0, #4a9bc7); border: 2px solid rgba(26,111,160,.3); }
+    .produto-pack .pack-name {
+      font-weight: 900;
+      font-size: 2rem;
+      letter-spacing: 4px;
+      color: #fff;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
+    }
+    .produto-pack .pack-sub {
+      font-size: .5rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-top: .1rem;
+    }
+    .produto-tag {
+      position: absolute;
+      top: .8rem; left: .8rem;
+      padding: .25rem .8rem;
+      border-radius: 50px;
+      font-size: .6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .produto-card.ant .produto-tag { background: var(--ant-color); color: #fff; }
+    .produto-card.bluwey .produto-tag { background: var(--bluwey-color); color: #fff; }
+    .produto-body { padding: 1.5rem; }
+    .produto-body h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: .15rem; }
+    .produto-card.ant .produto-body h3 { color: var(--ant-color); }
+    .produto-card.bluwey .produto-body h3 { color: var(--bluwey-color); }
+    .produto-subtitulo { font-size: .75rem; color: var(--text-muted); font-weight: 500; margin-bottom: .6rem; }
+    .produto-desc { font-size: .85rem; color: var(--text-light); line-height: 1.7; margin-bottom: .8rem; }
+    .produto-beneficios { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; margin-bottom: 1rem; }
+    .produto-beneficio {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .75rem;
+      color: var(--text-light);
+    }
+    .produto-beneficio i {
+      font-size: .6rem;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .produto-card.ant .produto-beneficio i { color: var(--ant-color); background: var(--ant-pale); }
+    .produto-card.bluwey .produto-beneficio i { color: var(--bluwey-color); background: var(--bluwey-pale); }
+    .produto-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+    }
+    .produto-preco-area { display: flex; flex-direction: column; }
+    .produto-preco-antigo { font-size: .75rem; color: var(--text-muted); text-decoration: line-through; }
+    .produto-preco-atual { font-size: 1.6rem; font-weight: 900; color: var(--text); line-height: 1.1; }
+    .produto-preco-parcela { font-size: .7rem; color: var(--text-muted); }
+    .produto-btn-comprar {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.3rem;
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .78rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .produto-btn-comprar:hover { transform: scale(1.04); }
+
+    /* GATILHOS SEGURANÇA */
+    .selos { padding: 3rem 0; background: var(--bg); }
+    .selos-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .selo-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .selo-item i { font-size: 2rem; color: var(--accent); margin-bottom: .5rem; display: block; }
+    .selo-item h4 { font-size: .85rem; font-weight: 700; margin-bottom: .2rem; }
+    .selo-item p { font-size: .75rem; color: var(--text-muted); }
+
+    /* BENEFICIOS */
+    .beneficios { padding: 5rem 0; background: var(--bg); }
+    .beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .beneficio-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .beneficio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(15,43,61,.12); }
+    .beneficio-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 1.2rem;
+      background: linear-gradient(135deg, var(--gold-pale), #f0e8d8);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .beneficio-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .beneficio-card p { color: var(--text-light); font-size: .82rem; line-height: 1.7; }
+
+    /* RETIRADA */
+    .retirada { padding: 5rem 0; background: var(--bg); }
+    .retirada-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .retirada-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .retirada-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .retirada-card.joinville { border-top: 3px solid var(--accent); }
+    .retirada-card.garuva { border-top: 3px solid var(--gold); }
+    .retirada-icon { font-size: 2rem; margin-bottom: .8rem; display: block; }
+    .retirada-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .2rem; }
+    .retirada-destaque { font-size: .8rem; color: var(--text-muted); margin-bottom: .4rem; }
+    .retirada-endereco { font-size: .8rem; color: var(--text-light); line-height: 1.6; margin-bottom: .8rem; }
+    .retirada-actions { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+    .retirada-btn-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .5rem 1rem;
+      background: rgba(26,111,160,.08);
+      border: 1px solid rgba(26,111,160,.15);
+      border-radius: 50px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .75rem;
+      font-weight: 500;
+      transition: all .3s;
+    }
+    .retirada-btn-maps:hover { background: rgba(26,111,160,.15); }
+
+    /* CTA */
+    .cta-section { padding: 5rem 0; background: linear-gradient(135deg, var(--primary), #1a3a5a); position: relative; overflow: hidden; }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(199,162,107,.08) 0%, transparent 70%);
+      top: -100px; right: -80px;
+    }
+    .cta-box { text-align: center; position: relative; z-index: 1; }
+    .cta-box h2 { font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: .8rem; }
+    .cta-box h2 .gold { color: var(--gold); }
+    .cta-box p { color: rgba(255,255,255,.6); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: #0a1a28; color: rgba(255,255,255,.5); padding: 3.5rem 1.5rem 2rem; }
+    .footer-grid { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    .footer-brand h4 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: .6rem; }
+    .footer-brand h4 span { color: var(--gold); }
+    .footer-brand p { font-size: .82rem; line-height: 1.8; max-width: 320px; }
+    .footer-col h5 { color: #fff; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; margin-bottom: .5rem; transition: color .3s; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1120px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; align-items: center; font-size: .78rem; flex-wrap: wrap; gap: 1rem; }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 900; display: flex; flex-direction: column; gap: .4rem; align-items: flex-end; }
+    .whatsapp-float-btn {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.2rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .78rem;
+      box-shadow: 0 4px 15px rgba(37,211,102,.25);
+      transition: all .3s;
+    }
+    .whatsapp-float-btn:hover { transform: scale(1.05); }
+    .whatsapp-float-btn.gar { background: #128C7E; }
+
+    /* MODAIS */
+    .modal-overlay {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #fff;
+      border-radius: var(--radius);
+      max-width: 520px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+      animation: modalIn .3s ease;
+    }
+    @keyframes modalIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal-close { position: absolute; top: .8rem; right: .8rem; width: 32px; height: 32px; background: #f0f0f0; border: none; border-radius: 50%; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .3s; }
+    .modal-close:hover { background: #e0e0e0; }
+    .modal-icon { font-size: 3rem; margin-bottom: .8rem; }
+    .modal-content h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: .2rem; }
+    .modal-preco { font-size: 1.8rem; font-weight: 900; color: var(--accent); margin-bottom: 1.2rem; }
+    .modal-content h4 { font-weight: 600; color: var(--primary); margin: 1.2rem 0 .4rem; font-size: .85rem; }
+    .modal-content ul { padding-left: 1.2rem; color: var(--text-light); line-height: 2; font-size: .85rem; }
+    .modal-content p { color: var(--text-light); line-height: 1.7; font-size: .85rem; }
+    .modal-btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.8rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .85rem;
+      margin-top: .8rem;
+      transition: all .3s;
+    }
+    .modal-btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+    .local-modal-title { font-size: 1.3rem; font-weight: 700; text-align: center; margin-bottom: .3rem; }
+    .local-modal-subtitle { color: var(--text-light); text-align: center; font-size: .85rem; margin-bottom: 1.5rem; }
+    .local-options { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+    .local-option {
+      padding: 1.2rem;
+      border: 2px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      cursor: pointer;
+      transition: all .3s;
+      background: #fff;
+      text-decoration: none;
+      display: block;
+    }
+    .local-option:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .local-option-icon { font-size: 2rem; margin-bottom: .3rem; }
+    .local-option h4 { font-size: 1rem; font-weight: 600; margin-bottom: .2rem; color: var(--text) !important; }
+    .local-option p { font-size: .78rem; color: var(--text-muted); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+      .section-title { font-size: 2rem; }
+    }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .menu-toggle { display: block; }
+      .nav-mobile { display: flex; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-bg-logo { width: 360px; height: 360px; }
+      .sobre-grid { grid-template-columns: 1fr; text-align: center; }
+      .sobre-grid-mini { grid-template-columns: 1fr; }
+      .sobre-highlight { text-align: left; }
+      .produtos-grid { grid-template-columns: 1fr; }
+      .beneficios-grid { grid-template-columns: 1fr 1fr; }
+      .depo-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .retirada-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 15px; }
+      .section, section { padding: 3.5rem 0; }
+      .hero { padding: 5rem 1rem 3rem; }
+      .hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.7rem; }
+      .produtos-grid { gap: 1.2rem; }
+      .produto-img { height: 160px; }
+      .produto-pack { width: 100px; height: 130px; }
+      .produto-pack .pack-name { font-size: 1.6rem; }
+      .produto-body { padding: 1.2rem; }
+      .produto-beneficios { grid-template-columns: 1fr; }
+      .produto-preco-atual { font-size: 1.3rem; }
+      .beneficios-grid { grid-template-columns: 1fr; }
+      .trust-grid { gap: 1.2rem; }
+      .trust-item { font-size: .7rem; }
+      .depo-grid { grid-template-columns: 1fr; }
+      .cta-box h2 { font-size: 1.6rem; }
+      .whatsapp-float { right: .8rem; bottom: .8rem; }
+      .whatsapp-float-btn { padding: .5rem 1rem; font-size: .72rem; }
+      .local-options { grid-template-columns: 1fr; }
+      .header { padding: .7rem 1rem; }
+      .hero-trust { gap: 1rem; }
+      .hero-trust-item { font-size: .7rem; }
+    }
+    @media (max-width: 380px) {
+      .oferta-box { padding: 1.5rem; }
+      .oferta-preco-atual { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a href="#" class="header-logo">
+      <img src="Logo Bluant.png" alt="BluAnt Logo" class="header-logo-img" onerror="this.style.display='none'" />
+      <span class="header-logo-text"><span>Blu</span>Ant</span>
+    </a>
+    <nav class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#retirada">Retirada</a>
+      <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20BluAnt." target="_blank" class="nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile" id="navMobile">
+    <button class="nav-mobile-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+    <a href="#produtos" onclick="toggleMenu()">Produtos</a>
+    <a href="#beneficios" onclick="toggleMenu()">Benefícios</a>
+    <a href="#retirada" onclick="toggleMenu()">Retirada</a>
+    <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20BluAnt." target="_blank" onclick="toggleMenu()" style="background:#25D366;padding:.8rem 2rem;border-radius:50px;font-size:1rem;color:#fff"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img-bg">
+      <img src="Tela inicial.png" alt="" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-leaf"></i> 100% Natural — Resultados Reais</div>
+      <h1>Invista na sua <span class="gold">saúde</span> todos os <span class="accent">dias</span></h1>
+      <p>
+        Suplementos premium <strong>100% naturais</strong> para quem busca mais
+        <strong>vitalidade, bem-estar e qualidade de vida</strong> todos os dias.
+      </p>
+      <div class="hero-actions">
+        <a href="#produtos" class="hero-btn-branco"><i class="fas fa-shopping-bag"></i> Comprar Produtos</a>
+        <a href="#oferta" class="hero-btn-laranja"><i class="fas fa-fire"></i> Ver Promoções</a>
+        <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="hero-btn-azul"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item"><i class="fas fa-check-circle"></i> 100% Natural</span>
+        <span class="hero-trust-item"><i class="fas fa-shield-alt"></i> Qualidade Premium</span>
+        <span class="hero-trust-item"><i class="fas fa-star"></i> +500 Clientes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BANNER -->
+  <div class="trust-banner">
+    <div class="container">
+      <div class="trust-grid">
+        <span class="trust-item"><i class="fas fa-leaf"></i> 100% Natural — Sem Química</span>
+        <span class="trust-item"><i class="fas fa-heart"></i> Vitalidade e Bem-Estar</span>
+        <span class="trust-item"><i class="fas fa-shield-alt"></i> Registro ANVISA</span>
+        <span class="trust-item"><i class="fas fa-star"></i> +500 Clientes Satisfeitos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFERTA RELAMPAGO -->
+  <section class="oferta" id="oferta">
+    <div class="container">
+      <div class="oferta-box fade-up">
+        <span class="oferta-tag">🔥 Oferta Especial</span>
+        <h2>Kit <span class="gold">BluAnt</span> Completo</h2>
+        <p class="oferta-desc">Leve <strong>AN-T</strong> + <strong>Bluwey</strong> juntos e economize. Suplementação completa para sua energia e bem-estar!</p>
+        <div class="oferta-preco-antigo">De R$ 379,80</div>
+        <div class="oferta-preco-atual">R$ 259,99</div>
+        <span class="oferta-economia">💰 Você economiza R$ 119,81</span>
+        <div class="produto-beneficios" style="justify-content:center">
+          <span class="produto-beneficio"><i class="fas fa-check"></i> Energia e vitalidade</span>
+          <span class="produto-beneficio"><i class="fas fa-check"></i> Bem-estar completo</span>
+          <span class="produto-beneficio"><i class="fas fa-check"></i> Retirada sem taxa</span>
+        </div>
+        <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20Kit%20BluAnt%20Completo%20(AN-T%20%2B%20Bluwey)%20-%20R%24%20259%2C99" target="_blank" class="oferta-btn"><i class="fab fa-whatsapp"></i> Quero Esse Kit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-visual fade-up">
+          <img src="Gemini_Generated_Image_gclcn7gclcn7gclc.png" alt="BluAnt" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect width=%22400%22 height=%22300%22 fill=%22%23e4f0f8%22 rx=%2216%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 font-size=%2260%22>🦋</text><text x=%22200%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%231a6fa0%22 font-size=%2222%22>BluAnt</text></svg>'"/>
+        </div>
+        <div class="sobre-text fade-up">
+          <span class="section-tag"><i class="fas fa-seedling"></i> Nossa História</span>
+          <h2>Compromisso com sua <span class="accent">saúde</span> e <span class="accent">bem-estar</span></h2>
+          <p>
+            A <strong>BluAnt</strong> nasceu da paixão por qualidade de vida. Apresentamos
+            <strong>AN-T</strong> e <strong>Bluwey</strong>, suplementos desenvolvidos com
+            ingredientes naturais selecionados para transformar sua vitalidade.
+          </p>
+          <div class="sobre-highlight">
+            <strong>+150 fórmulas desenvolvidas</strong> por especialistas em nutrição —
+            cada uma pensada para entregar resultados reais com o mais alto padrão de qualidade.
+          </div>
+          <p>
+            Trabalhamos com fornecedores selecionados e testes rigorosos para garantir
+            excelência em cada produto que chega até você.
+          </p>
+          <div class="sobre-grid-mini">
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-leaf"></i></div>100% Ingredientes Naturais</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-check"></i></div>Qualidade Garantida</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-truck"></i></div>Retirada Sem Taxa</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-heart"></i></div>Bem-Estar Real</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELOS -->
+  <div class="selos">
+    <div class="container">
+      <div class="selos-grid">
+        <div class="selo-item fade-up">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Registro ANVISA</h4>
+          <p>Produtos regularizados e aprovados</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-leaf"></i>
+          <h4>100% Natural</h4>
+          <p>Zero aditivos químicos ou sintéticos</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-trophy"></i>
+          <h4>+150 Fórmulas</h4>
+          <p>Expertise em nutrição e desenvolvimento</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-star"></i>
+          <h4>Clientes Satisfeitos</h4>
+          <p>Recomendado por quem usa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-comments"></i> Clientes Reais</span>
+        <h2 class="section-title">Quem já usou <span class="accent">recomenda</span></h2>
+        <p class="section-desc mx-auto">Veja o que nossos clientes estão dizendo sobre os resultados.</p>
+      </div>
+      <div class="depo-grid">
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Comprei o AN-T para dores nas articulações. Em 2 semanas já senti diferença. Recomendo de olhos fechados!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">CM</div>
+            <div>
+              <div class="depo-nome">Carlos M.</div>
+              <div class="depo-idade">54 anos • Joinville</div>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>O Bluwey mudou minha disposição. Voltei a me sentir como aos 30 anos. Produto nota 10!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">RS</div>
+            <div>
+              <div class="depo-nome">Roberto S.</div>
+              <div class="depo-idade">48 anos • Garuva</div>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Atendimento excelente e os produtos são realmente naturais. Minha energia melhorou muito!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">AL</div>
+            <div>
+              <div class="depo-nome">Antônio L.</div>
+              <div class="depo-idade">62 anos • Joinville</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="produtos" id="produtos">
+    <div class="container">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-flask"></i> Nossos Produtos</span>
+        <h2 class="section-title"><span class="accent">AN-T</span> & <span class="accent">Bluwey</span></h2>
+        <p class="section-desc mx-auto">Dois produtos premium desenvolvidos com a qualidade BluAnt para oferecer o melhor da natureza.</p>
+      </div>
+      <div class="produtos-grid">
+        <!-- AN-T -->
+        <div class="produto-card ant fade-up">
+          <div class="produto-img">
+            <img src="an-t.png" alt="AN-T" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            <span class="produto-tag">Mais Vendido</span>
+          </div>
+          <div class="produto-body">
+            <h3>AN-T</h3>
+            <div class="produto-subtitulo">🌿 Combate à Inflamação & Bem-Estar</div>
+            <p class="produto-desc">
+              Fórmula inovadora para combater inflamação, proporcionando alívio e bem-estar
+              para quem sofre de dor e desconforto.
+            </p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Dor crônica e aguda</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Reduz inflamação e desconforto</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora qualidade de vida</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Fortalece o sistema imunológico</span>
+            </div>
+            <div class="produto-footer">
+              <div class="produto-preco-area">
+                <span class="produto-preco-antigo">De R$ 189,90</span>
+                <span class="produto-preco-atual">R$ 144,27</span>
+                <span class="produto-preco-parcela"></span>
+              </div>
+              <button class="produto-btn-comprar" onclick='comprar("AN-T","https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20no%20AN-T%20(R%24%20144%2C27)")'><i class="fab fa-whatsapp"></i> Pedir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bluwey -->
+        <div class="produto-card bluwey fade-up">
+          <div class="produto-img">
+            <img src="bluwey.png" alt="Bluwey" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            <span class="produto-tag">Sucesso</span>
+          </div>
+          <div class="produto-body">
+            <h3>Bluwey</h3>
+            <div class="produto-subtitulo">💪 Saúde Sexual & Energia</div>
+            <p class="produto-desc">
+              Suplemento que está transformando a forma de como os homens abordam a saúde sexual.
+              O Bluwey é 100% natural.
+            </p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio"><i class="fas fa-check"></i> 100% natural</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Aumenta a energia</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Aumenta a libido</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Prolonga a duração</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora a saúde geral</span>
+            </div>
+            <div class="produto-footer">
+              <div class="produto-preco-area">
+                <span class="produto-preco-antigo">De R$ 189,90</span>
+                <span class="produto-preco-atual">R$ 143,98</span>
+                <span class="produto-preco-parcela"></span>
+              </div>
+              <button class="produto-btn-comprar" onclick='comprar("Bluwey","https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Bluwey%20(R%24%20144%2C99)")'><i class="fab fa-whatsapp"></i> Pedir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="beneficios" id="beneficios">
+    <div class="container">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-gem"></i> Por que escolher</span>
+        <h2 class="section-title">Qualidade que faz a <span class="accent">diferença</span></h2>
+        <p class="section-desc mx-auto">Compromisso com sua saúde em cada detalhe.</p>
+      </div>
+      <div class="beneficios-grid">
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Qualidade Premium</h3>
+          <p>Produtos rigorosamente testados e selecionados para garantir a melhor experiência.</p>
+        </div>
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-leaf"></i></div>
+          <h3>100% Natural</h3>
+          <p>Ingredientes naturais de alta pureza, sem aditivos químicos ou conservantes artificiais.</p>
+        </div>
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-truck"></i></div>
+          <h3>Retirada Sem Taxa</h3>
+          <p>Pediu pelo WhatsApp, retirou em Joinville ou Garuva sem pagar frete.</p>
+        </div>
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-headset"></i></div>
+          <h3>Atendimento Personalizado</h3>
+          <p>Tire suas dúvidas diretamente conosco pelo WhatsApp. Recomendamos o produto ideal.</p>
+        </div>
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-flask"></i></div>
+          <h3>+150 Fórmulas</h3>
+          <p>Mais de 150 fórmulas desenvolvidas com pesquisa e expertise em nutrição.</p>
+        </div>
+        <div class="beneficio-card fade-up">
+          <div class="beneficio-icon"><i class="fas fa-heart"></i></div>
+          <h3>Bem-Estar Real</h3>
+          <p>Focado em resultados que transformam sua saúde, energia e qualidade de vida.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RETIRADA -->
+  <section class="retirada" id="retirada">
+    <div class="container">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-map-pin"></i> Retirada</span>
+        <h2 class="section-title">Pegue seu pedido <span class="accent">sem taxa</span></h2>
+        <p class="section-desc mx-auto">Faça seu pedido pelo WhatsApp e retire em um dos nossos pontos. Simples e sem custo adicional.</p>
+      </div>
+      <div class="retirada-grid">
+        <div class="retirada-card joinville fade-up">
+          <img src="foto%20joinville.png" alt="Joinville" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin-bottom:.8rem;" onerror="this.style.display='none'" />
+          <span class="retirada-icon">🏙️</span>
+          <h3>Joinville</h3>
+          <div class="retirada-destaque">📍 Rua XV de Outubro, 180 — Rio Bonito</div>
+          <p class="retirada-endereco">Barbearia Barba Negra LN — Agende pelo WhatsApp</p>
+          <div class="retirada-actions">
+            <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20retirar%20em%20Joinville" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">📱 WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" class="retirada-btn-maps"><i class="fas fa-map-marker-alt"></i> Maps</a>
+          </div>
+        </div>
+        <div class="retirada-card garuva fade-up">
+          <img src="foto%20garuva.png" alt="Garuva" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin-bottom:.8rem;" onerror="this.style.display='none'" />
+          <span class="retirada-icon">🌊</span>
+          <h3>Garuva</h3>
+          <div class="retirada-destaque">📍 Rua Salvador Oliva, Nº 88 — Próx. Mat. Construção Patrícia</div>
+          <p class="retirada-endereco">Retire em Garuva também. Próximo ao Materiais de Construção Patrícia!</p>
+          <div class="retirada-actions">
+            <a href="https://wa.me/554789082163?text=Ol%C3%A1!%20Quero%20retirar%20em%20Garuva" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">📱 WhatsApp</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Materiais+de+Construcao+Patricia+Garuva+SC" target="_blank" class="retirada-btn-maps"><i class="fas fa-map-marker-alt"></i> Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box fade-up">
+        <h2>Pronto para <span class="gold">voltar a ter energia</span>?</h2>
+        <p>AN-T e Bluwey: suplementos 100% naturais para quem quer qualidade de vida de verdade.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="btn-whatsapp" style="font-size:1rem;padding:1rem 2.5rem"><i class="fab fa-whatsapp"></i> Fale Conosco Agora</a>
+          <a href="#oferta" class="btn-primary">Ver Ofertas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>✨ <span>Blu</span>Ant</h4>
+        <p>AN-T e Bluwey — suplementos premium 100% naturais. +150 fórmulas desenvolvidas por especialistas em nutrição.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Links</h5>
+        <a href="#produtos">AN-T & Bluwey</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#retirada">Retirada</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 BluAnt — Todos os direitos reservados.</span>
+      <span>Produtos 100% Naturais • Qualidade Premium</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="whatsapp-float-btn"><i class="fab fa-whatsapp"></i> <span>Joinville</span></a>
+    <a href="https://wa.me/554789082163?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="whatsapp-float-btn gar"><i class="fab fa-whatsapp"></i> <span>Garuva</span></a>
+  </div>
+
+  <!-- MODAIS -->
+  <div class="modal-overlay" id="modalProduto" onclick="if(event.target===this)fecharModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="fecharModal()"><i class="fas fa-times"></i></button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="modalLocal" onclick="if(event.target===this)fecharLocal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="fecharLocal()"><i class="fas fa-times"></i></button>
+      <div id="localBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // Dados dos produtos
+    var produtos = {
+      ant: {
+        icon: '<i class="fas fa-leaf" style="color:#2d6a4f"></i>',
+        nome: "AN-T",
+        desc: "Fórmula inovadora para combater inflamação, proporcionando alívio e bem-estar para quem sofre de dor e desconforto.",
+        beneficios: [
+          "Ajuda na dor crônica e aguda",
+          "Redução da inflamação e do desconforto",
+          "Melhoria da qualidade de vida e bem-estar",
+          "Fortalecimento do sistema imunológico",
+          "Suporte à saúde e bem-estar social"
+        ],
+        comoUsar: "Tomar 1 cápsula ao dia.",
+        wpp: "https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20AN-T%20-%20R%24%20144%2C27",
+        preco: "R$ 144,27",
+        composicao: "Fórmula inovadora 100% natural",
+        rendimento: "30 cápsulas"
+      },
+      bluwey: {
+        icon: '<i class="fas fa-water" style="color:#1a6fa0"></i>',
+        nome: "Bluwey",
+        desc: "Suplemento que está transformando a forma de como os homens abordam a saúde sexual. O Bluwey é 100% natural.",
+        beneficios: [
+          "100% natural",
+          "Aumenta a energia",
+          "Aumenta a libido",
+          "Prolonga a duração",
+          "Melhora a saúde geral"
+        ],
+        comoUsar: "Tomar 1 cápsula ao dia.",
+        wpp: "https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20Bluwey%20-%20R%24%20143%2C98",
+        preco: "R$ 143,98",
+        composicao: "Fórmula 100% natural",
+        rendimento: "30 cápsulas"
+      }
+    };
+
+    var produtoComprando = null;
+    var wppLink = null;
+
+    function abrirModal(id) {
+      var p = produtos[id];
+      if (!p) return;
+      var h = '<div class="modal-icon">' + p.icon + '</div>';
+      h += '<h3>' + p.nome + '</h3>';
+      h += '<div class="modal-preco">' + p.preco + '</div>';
+      h += '<p>' + p.desc + '</p>';
+      h += '<h4><i class="fas fa-flask" style="color:var(--accent)"></i> Composição</h4>';
+      h += '<p>' + p.composicao + '</p>';
+      h += '<h4><i class="fas fa-box" style="color:var(--gold)"></i> Rendimento</h4>';
+      h += '<p>' + p.rendimento + '</p>';
+      h += '<h4><i class="fas fa-check-circle" style="color:var(--ant-color)"></i> Benefícios</h4><ul>';
+      for (var i = 0; i < p.beneficios.length; i++) h += '<li>' + p.beneficios[i] + '</li>';
+      h += '</ul>';
+      h += '<h4><i class="fas fa-book" style="color:var(--gold)"></i> Como Usar</h4>';
+      h += '<p>' + p.comoUsar + '</p>';
+      h += '<br /><button class="modal-btn-whatsapp" onclick="comprar(\'' + p.nome + '\',\'' + p.wpp + '\')"><i class="fab fa-whatsapp"></i> Comprar Agora</button>';
+      document.getElementById('modalBody').innerHTML = h;
+      document.getElementById('modalProduto').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharModal() {
+      document.getElementById('modalProduto').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    var precoUni = 144.125;
+
+    function comprar() {
+      fecharModal();
+      var h = '<div class="local-modal-title">🛒 Monte seu <span style="color:var(--gold)">Pedido</span></div>';
+      h += '<div class="local-modal-subtitle">Escolha as quantidades de cada produto (mín. 2 unid. para desconto no PIX)</div>';
+      h += '<div style="margin:1rem 0">';
+      // AN-T
+      h += '<div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--ant-pale);border-radius:var(--radius-sm);margin-bottom:.5rem;">';
+      h += '<div><strong style="color:var(--ant-color);font-size:1rem">AN-T</strong><br><span style="font-size:.75rem;color:var(--text-muted)">Combate à inflamação</span></div>';
+      h += '<div style="display:flex;align-items:center;gap:.5rem;">';
+      h += '<button onclick="mudarQtd(\'ant\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>';
+      h += '<span id="qtd-ant" style="font-size:1.2rem;font-weight:700;min-width:30px;text-align:center">0</span>';
+      h += '<button onclick="mudarQtd(\'ant\',1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--ant-color);background:var(--ant-color);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>';
+      h += '</div></div>';
+      // Bluwey
+      h += '<div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--bluwey-pale);border-radius:var(--radius-sm);margin-bottom:1rem;">';
+      h += '<div><strong style="color:var(--bluwey-color);font-size:1rem">Bluwey</strong><br><span style="font-size:.75rem;color:var(--text-muted)">Saúde sexual & energia</span></div>';
+      h += '<div style="display:flex;align-items:center;gap:.5rem;">';
+      h += '<button onclick="mudarQtd(\'bluwey\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>';
+      h += '<span id="qtd-bluwey" style="font-size:1.2rem;font-weight:700;min-width:30px;text-align:center">0</span>';
+      h += '<button onclick="mudarQtd(\'bluwey\',1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--bluwey-color);background:var(--bluwey-color);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>';
+      h += '</div></div>';
+      // Forma de pagamento
+      h += '<div style="margin-bottom:1rem">';
+      h += '<p style="font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.5rem">💳 Forma de pagamento:</p>';
+      h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">';
+      h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--gold);border-radius:var(--radius-sm);cursor:pointer;background:var(--gold-pale)">';
+      h += '<input type="radio" name="pagamento" value="pix" checked style="accent-color:var(--gold)">';
+      h += '<div><span style="font-weight:600;font-size:.8rem">PIX</span><br><span style="font-size:.65rem;color:var(--text-muted)">Ganha desconto</span></div></label>';
+      h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer">';
+      h += '<input type="radio" name="pagamento" value="credito">';
+      h += '<div><span style="font-weight:600;font-size:.8rem">Cartão</span><br><span style="font-size:.65rem;color:var(--text-muted)">Crédito/Débito</span></div></label>';
+      h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer">';
+      h += '<input type="radio" name="pagamento" value="dinheiro">';
+      h += '<div><span style="font-weight:600;font-size:.8rem">Dinheiro</span><br><span style="font-size:.65rem;color:var(--text-muted)">Retirada</span></div></label>';
+      h += '</div></div>';
+      // Resumo
+      h += '<div id="resumo-pedido" style="padding:1rem;background:var(--gold-pale);border-radius:var(--radius-sm);text-align:center">';
+      h += '<p style="font-size:.85rem;color:var(--text-light)">Selecione os produtos acima</p>';
+      h += '</div>';
+      h += '<button id="btn-finalizar" onclick="finalizarPedido()" style="width:100%;margin-top:1rem;padding:.9rem;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#fff;border:none;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;opacity:.4;transition:all .3s" disabled>';
+      h += '<i class="fab fa-whatsapp"></i> Finalizar Pedido</button>';
+      h += '</div>';
+      document.getElementById('localBody').innerHTML = h;
+      document.getElementById('modalLocal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Radio change listener
+      document.querySelectorAll('input[name="pagamento"]').forEach(function(el) {
+        el.addEventListener('change', atualizarResumo);
+      });
+    }
+
+    var qtdAnt = 0, qtdBluwey = 0;
+
+    function mudarQtd(tipo, delta) {
+      if (tipo === 'ant') { qtdAnt = Math.max(0, qtdAnt + delta); }
+      else { qtdBluwey = Math.max(0, qtdBluwey + delta); }
+      document.getElementById('qtd-ant').textContent = qtdAnt;
+      document.getElementById('qtd-bluwey').textContent = qtdBluwey;
+      atualizarResumo();
+    }
+
+    function getPagamento() {
+      var el = document.querySelector('input[name="pagamento"]:checked');
+      return el ? el.value : 'pix';
+    }
+
+    function atualizarResumo() {
+      var total = qtdAnt + qtdBluwey;
+      var resumo = document.getElementById('resumo-pedido');
+      var btn = document.getElementById('btn-finalizar');
+      if (!resumo) return;
+      if (total === 0) {
+        resumo.innerHTML = '<p style="font-size:.85rem;color:var(--text-light)">Selecione os produtos acima</p>';
+        if (btn) { btn.disabled = true; btn.style.opacity = '.4'; }
+        return;
+      }
+      var pag = getPagamento();
+      var subTotal = total * precoUni;
+      var desconto = (pag === 'pix' && total >= 3) ? 0.10 : (pag === 'pix' && total === 2) ? 0.05 : 0;
+      var totalDesc = desconto > 0 ? (subTotal * (1 - desconto)).toFixed(0) : subTotal;
+      var itens = [];
+      if (qtdAnt > 0) itens.push(qtdAnt + 'x AN-T');
+      if (qtdBluwey > 0) itens.push(qtdBluwey + 'x Bluwey');
+      var html = '<div style="font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.3rem">' + itens.join(' + ') + '</div>';
+      html += '<div style="font-size:.75rem;color:var(--text-muted)">' + total + ' unidade' + (total > 1 ? 's' : '') + '</div>';
+      if (desconto > 0) {
+        html += '<div style="font-size:1.4rem;font-weight:900;color:var(--text);margin:.3rem 0">R$ ' + totalDesc + '</div>';
+        html += '<div style="font-size:.75rem;color:var(--gold);font-weight:600">' + (desconto*100).toFixed(0) + '% OFF no PIX</div>';
+        html += '<div style="font-size:.7rem;color:var(--text-muted)">De R$ ' + subTotal + ' por R$ ' + totalDesc + '</div>';
+      } else {
+        html += '<div style="font-size:1.4rem;font-weight:900;color:var(--text);margin:.3rem 0">R$ ' + subTotal + '</div>';
+        if (pag !== 'pix' && total >= 2) {
+          var pixPreco2 = total >= 3 ? (subTotal * 0.9).toFixed(0) : (subTotal * 0.95).toFixed(0);
+          html += '<div style="font-size:.7rem;color:var(--gold)">💡 No PIX fica R$ ' + pixPreco2 + '</div>';
+        } else if (pag === 'pix' && total === 1) {
+          html += '<div style="font-size:.7rem;color:var(--gold)">⬆ Adicione mais 1 unidade e ganhe <strong>5% OFF</strong> no PIX!</div>';
+        }
+      }
+      resumo.innerHTML = html;
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+    }
+
+    function finalizarPedido() {
+      var total = qtdAnt + qtdBluwey;
+      if (total === 0) return;
+      var itens = [];
+      if (qtdAnt > 0) itens.push(qtdAnt + 'x AN-T');
+      if (qtdBluwey > 0) itens.push(qtdBluwey + 'x Bluwey');
+      var pag = getPagamento();
+      var pagLabel = pag === 'pix' ? 'PIX' : pag === 'credito' ? 'Cartão (Crédito/Débito)' : 'Dinheiro';
+      var subTotal = total * precoUni;
+      var desconto = (pag === 'pix' && total >= 3) ? 0.10 : (pag === 'pix' && total === 2) ? 0.05 : 0;
+      var totalDesc = desconto > 0 ? (subTotal * (1 - desconto)).toFixed(0) : subTotal;
+      var itensStr = itens.join(' + ');
+      var pagInfo = "Pagamento: " + pagLabel + ". Total: R$ " + totalDesc;
+      fecharLocal();
+      var msgJlle = "Olá! Quero comprar produtos BluAnt e retirar em Joinville. " + itensStr + ". " + pagInfo;
+      var msgGar = "Olá! Quero comprar produtos BluAnt e retirar em Garuva. " + itensStr + ". " + pagInfo;
+      var wppJlle = "https://wa.me/5547984202188?text=" + encodeURIComponent(msgJlle);
+      var wppGar = "https://wa.me/554789082163?text=" + encodeURIComponent(msgGar);
+      var h = '<div class="local-modal-title">📍 Onde você quer retirar?</div>';
+      h += '<div class="local-modal-subtitle">Escolha o local para retirar seu pedido</div>';
+      h += '<div class="local-options">';
+      h += '<div class="local-option" style="cursor:pointer;padding-bottom:1rem">';
+      h += '<img src="foto%20joinville.png" alt="Joinville" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:.5rem;" onerror="this.style.display=\'none\'" />';
+      h += '<div class="local-option-icon">🏙️</div>';
+      h += '<h4>Joinville</h4>';
+      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua XV de Outubro, 180 — Rio Bonito</p>';
+      h += '<div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-top:.4rem">';
+      h += '<a href="' + wppJlle + '" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:#25D366;color:#fff;border-radius:50px;font-weight:600;font-size:.85rem;text-decoration:none;flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>';
+      h += '<button onclick="copiarEndereco(\'Rua XV de Outubro, 180 - Rio Bonito, Joinville - SC\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">📋 Copiar</button>';
+      h += '<a href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;text-decoration:none"><i class="fas fa-map-marker-alt"></i> Maps</a>';
+      h += '</div></div>';
+      h += '<div class="local-option" style="cursor:pointer;padding-bottom:1rem">';
+      h += '<img src="foto%20garuva.png" alt="Garuva" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:.5rem;" onerror="this.style.display=\'none\'" />';
+      h += '<div class="local-option-icon">🌊</div>';
+      h += '<h4>Garuva</h4>';
+      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua Salvador Oliva, 88 — Próx. Mat. Construção Patrícia</p>';
+      h += '<div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-top:.4rem">';
+      h += '<a href="' + wppGar + '" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:#25D366;color:#fff;border-radius:50px;font-weight:600;font-size:.85rem;text-decoration:none;flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>';
+      h += '<button onclick="copiarEndereco(\'Rua Salvador Oliva, 88 - Garuva - SC (Próx. Mat. Construção Patrícia)\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">📋 Copiar</button>';
+      h += '<a href="https://www.google.com/maps/search/?api=1&query=Materiais+de+Construcao+Patricia+Garuva+SC" target="_blank" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;text-decoration:none"><i class="fas fa-map-marker-alt"></i> Maps</a>';
+      h += '</div></div>';
+      h += '</div>';
+      document.getElementById('localBody').innerHTML = h;
+      document.getElementById('modalLocal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharLocal() {
+      document.getElementById('modalLocal').classList.remove('active');
+      document.body.style.overflow = '';
+      produtoComprando = null;
+      wppLink = null;
+    }
+
+    function copiarEndereco(endereco) {
+      navigator.clipboard.writeText(endereco).then(function() {
+        var t = document.getElementById('toast');
+        if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }
+        t.style.cssText = 'position:fixed;bottom:6rem;left:50%;transform:translateX(-50%);background:rgba(15,43,61,.9);color:#fff;padding:.6rem 1.5rem;border-radius:50px;font-size:.85rem;font-weight:500;z-index:9999;backdrop-filter:blur(8px);transition:all .4s;opacity:1';
+        t.textContent = '📋 Endereço copiado!';
+        setTimeout(function() { t.style.opacity = '0'; }, 2500);
+      });
+    }
+
+    // Header scroll
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('header');
+      if (window.scrollY > 80) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navMobile').classList.toggle('active');
+    }
+
+    // Scroll animations
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
