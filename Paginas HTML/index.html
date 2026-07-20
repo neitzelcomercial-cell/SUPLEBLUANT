@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -6,13 +6,21 @@
   <meta http-equiv="pragma" content="no-cache" />
   <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="expires" content="0" />
-  <title>BluAnt — Suplementos Naturais Premium</title>
-  <meta name="description" content="AN-T e Bluwey: Suplementos premium 100% naturais para saúde, energia e bem-estar. Fórmulas inovadoras para qualidade de vida." />
+  <title>BluAnt â€” Suplementos Naturais Premium</title>
+  <meta name="description" content="AN-T e Bluwey: Suplementos premium 100% naturais para saÃºde, energia e bem-estar. FÃ³rmulas inovadoras para qualidade de vida." />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPENDTYFWH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MPENDTYFWH');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
-    // Força recarregar se vier do cache (versão v7.0)
+    // ForÃ§a recarregar se vier do cache (versÃ£o v7.0)
     (function() {
       var v = localStorage.getItem('bluant_v');
       if (v !== '7') {
@@ -48,6 +56,9 @@
       --bluwey-color: #1a6fa0;
       --bluwey-light: #4a9bc7;
       --bluwey-pale: #e4f0f8;
+      --helofemme-color: #c2185b;
+      --helofemme-light: #e91e63;
+      --helofemme-pale: #fce4ec;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 17px; }
@@ -410,7 +421,7 @@
     }
     .hero-cta-sub i { color: var(--gold); }
 
-    /* OFERTA — COMPRA RAPIDA */
+    /* OFERTA â€” COMPRA RAPIDA */
     .oferta { padding: 5rem 0; background: linear-gradient(135deg, var(--gold-pale), #fff8ee, var(--gold-pale)); }
     .oferta-box {
       background: #fff;
@@ -569,7 +580,7 @@
 
     /* PRODUTOS */
     .produtos { padding: 5rem 0; background: linear-gradient(180deg, var(--bg), #f0f5f9, var(--bg)); }
-    .produtos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .produtos-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 3rem; }
     .produto-card {
       background: var(--card);
       border: 1px solid var(--card-border);
@@ -589,10 +600,13 @@
     }
     .produto-card.ant .produto-img { background: linear-gradient(135deg, var(--ant-pale), #d0e8dc); }
     .produto-card.bluwey .produto-img { background: linear-gradient(135deg, var(--bluwey-pale), #d0e4f0); }
+    .produto-card.helofemme .produto-img { background: linear-gradient(135deg, var(--helofemme-pale), #f8bbd0); }
     .produto-card.ant .produto-btn-comprar { background: linear-gradient(135deg, var(--ant-color), var(--ant-light)); }
     .produto-card.ant .produto-btn-comprar:hover { box-shadow: 0 4px 15px rgba(45,106,79,.3); }
     .produto-card.bluwey .produto-btn-comprar { background: linear-gradient(135deg, var(--bluwey-color), var(--bluwey-light)); }
     .produto-card.bluwey .produto-btn-comprar:hover { box-shadow: 0 4px 15px rgba(26,111,160,.3); }
+    .produto-card.helofemme .produto-btn-comprar { background: linear-gradient(135deg, var(--helofemme-color), var(--helofemme-light)); }
+    .produto-card.helofemme .produto-btn-comprar:hover { box-shadow: 0 4px 15px rgba(194,24,91,.3); }
     .produto-pack {
       width: 120px; height: 160px;
       border-radius: 14px;
@@ -634,10 +648,12 @@
     }
     .produto-card.ant .produto-tag { background: var(--ant-color); color: #fff; }
     .produto-card.bluwey .produto-tag { background: var(--bluwey-color); color: #fff; }
+    .produto-card.helofemme .produto-tag { background: var(--helofemme-color); color: #fff; }
     .produto-body { padding: 1.5rem; }
     .produto-body h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: .15rem; }
     .produto-card.ant .produto-body h3 { color: var(--ant-color); }
     .produto-card.bluwey .produto-body h3 { color: var(--bluwey-color); }
+    .produto-card.helofemme .produto-body h3 { color: var(--helofemme-color); }
     .produto-subtitulo { font-size: .75rem; color: var(--text-muted); font-weight: 500; margin-bottom: .6rem; }
     .produto-desc { font-size: .85rem; color: var(--text-light); line-height: 1.7; margin-bottom: .8rem; }
     .produto-beneficios { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; margin-bottom: 1rem; }
@@ -659,6 +675,7 @@
     }
     .produto-card.ant .produto-beneficio i { color: var(--ant-color); background: var(--ant-pale); }
     .produto-card.bluwey .produto-beneficio i { color: var(--bluwey-color); background: var(--bluwey-pale); }
+    .produto-card.helofemme .produto-beneficio i { color: var(--helofemme-color); background: var(--helofemme-pale); }
     .produto-footer {
       display: flex;
       align-items: center;
@@ -686,7 +703,7 @@
     }
     .produto-btn-comprar:hover { transform: scale(1.04); }
 
-    /* GATILHOS SEGURANÇA */
+    /* GATILHOS SEGURANÃ‡A */
     .selos { padding: 3rem 0; background: var(--bg); }
     .selos-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
     .selo-item {
@@ -874,6 +891,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
+      .produtos-grid { grid-template-columns: 1fr 1fr; }
       .hero h1 { font-size: 3rem; }
       .section-title { font-size: 2rem; }
     }
@@ -936,7 +954,7 @@
     <nav class="nav">
       <a href="#sobre">Sobre</a>
       <a href="#produtos">Produtos</a>
-      <a href="#beneficios">Benefícios</a>
+      <a href="#beneficios">BenefÃ­cios</a>
       <a href="#retirada">Retirada</a>
       <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20BluAnt." target="_blank" class="nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </nav>
@@ -948,7 +966,7 @@
     <button class="nav-mobile-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
     <a href="#sobre" onclick="toggleMenu()">Sobre</a>
     <a href="#produtos" onclick="toggleMenu()">Produtos</a>
-    <a href="#beneficios" onclick="toggleMenu()">Benefícios</a>
+    <a href="#beneficios" onclick="toggleMenu()">BenefÃ­cios</a>
     <a href="#retirada" onclick="toggleMenu()">Retirada</a>
     <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20BluAnt." target="_blank" onclick="toggleMenu()" style="background:#25D366;padding:.8rem 2rem;border-radius:50px;font-size:1rem;color:#fff"><i class="fab fa-whatsapp"></i> WhatsApp</a>
   </div>
@@ -960,15 +978,15 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-leaf"></i> 100% Natural — Resultados Reais</div>
-      <h1>Invista na sua <span class="gold">saúde</span> todos os <span class="accent">dias</span></h1>
+      <div class="hero-badge"><i class="fas fa-leaf"></i> 100% Natural â€” Resultados Reais</div>
+      <h1>Invista na sua <span class="gold">saÃºde</span> todos os <span class="accent">dias</span></h1>
       <p>
         Suplementos premium <strong>100% naturais</strong> para quem busca mais
         <strong>vitalidade, bem-estar e qualidade de vida</strong> todos os dias.
       </p>
       <div class="hero-actions">
         <a href="#produtos" class="hero-btn-branco"><i class="fas fa-shopping-bag"></i> Comprar Produtos</a>
-        <a href="#oferta" class="hero-btn-laranja"><i class="fas fa-fire"></i> Ver Promoções</a>
+        <a href="#oferta" class="hero-btn-laranja"><i class="fas fa-fire"></i> Ver PromoÃ§Ãµes</a>
         <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="hero-btn-azul"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>
       </div>
       <div class="hero-trust">
@@ -983,7 +1001,7 @@
   <div class="trust-banner">
     <div class="container">
       <div class="trust-grid">
-        <span class="trust-item"><i class="fas fa-leaf"></i> 100% Natural — Sem Química</span>
+        <span class="trust-item"><i class="fas fa-leaf"></i> 100% Natural â€” Sem QuÃ­mica</span>
         <span class="trust-item"><i class="fas fa-heart"></i> Vitalidade e Bem-Estar</span>
         <span class="trust-item"><i class="fas fa-shield-alt"></i> Registro ANVISA</span>
         <span class="trust-item"><i class="fas fa-star"></i> +500 Clientes Satisfeitos</span>
@@ -995,12 +1013,12 @@
   <section class="oferta" id="oferta">
     <div class="container">
       <div class="oferta-box fade-up">
-        <span class="oferta-tag">🔥 Oferta Especial</span>
+        <span class="oferta-tag">ðŸ”¥ Oferta Especial</span>
         <h2>Kit <span class="gold">BluAnt</span> Completo</h2>
-        <p class="oferta-desc">Leve <strong>AN-T</strong> + <strong>Bluwey</strong> juntos e economize. Suplementação completa para sua energia e bem-estar!</p>
+        <p class="oferta-desc">Leve <strong>AN-T</strong> + <strong>Bluwey</strong> juntos e economize. SuplementaÃ§Ã£o completa para sua energia e bem-estar!</p>
         <div class="oferta-preco-antigo">De R$ 379,80</div>
         <div class="oferta-preco-atual">R$ 259,99</div>
-        <span class="oferta-economia">💰 Você economiza R$ 119,81</span>
+        <span class="oferta-economia">ðŸ’° VocÃª economiza R$ 119,81</span>
         <div class="produto-beneficios" style="justify-content:center">
           <span class="produto-beneficio"><i class="fas fa-check"></i> Energia e vitalidade</span>
           <span class="produto-beneficio"><i class="fas fa-check"></i> Bem-estar completo</span>
@@ -1016,23 +1034,23 @@
     <div class="container">
       <div class="sobre-grid">
         <div class="sobre-visual fade-up">
-          <img src="Gemini_Generated_Image_gclcn7gclcn7gclc.png" alt="BluAnt" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect width=%22400%22 height=%22300%22 fill=%22%23e4f0f8%22 rx=%2216%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 font-size=%2260%22>🦋</text><text x=%22200%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%231a6fa0%22 font-size=%2222%22>BluAnt</text></svg>'"/>
+          <img src="Gemini_Generated_Image_gclcn7gclcn7gclc.png" alt="BluAnt" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect width=%22400%22 height=%22300%22 fill=%22%23e4f0f8%22 rx=%2216%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 font-size=%2260%22>ðŸ¦‹</text><text x=%22200%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%231a6fa0%22 font-size=%2222%22>BluAnt</text></svg>'"/>
         </div>
         <div class="sobre-text fade-up">
-          <span class="section-tag"><i class="fas fa-seedling"></i> Nossa História</span>
-          <h2>Compromisso com sua <span class="accent">saúde</span> e <span class="accent">bem-estar</span></h2>
+          <span class="section-tag"><i class="fas fa-seedling"></i> Nossa HistÃ³ria</span>
+          <h2>Compromisso com sua <span class="accent">saÃºde</span> e <span class="accent">bem-estar</span></h2>
           <p>
-            A <strong>BluAnt</strong> nasceu da paixão por qualidade de vida. Apresentamos
+            A <strong>BluAnt</strong> nasceu da paixÃ£o por qualidade de vida. Apresentamos
             <strong>AN-T</strong> e <strong>Bluwey</strong>, suplementos desenvolvidos com
             ingredientes naturais selecionados para transformar sua vitalidade.
           </p>
           <div class="sobre-highlight">
-            <strong>+150 fórmulas desenvolvidas</strong> por especialistas em nutrição —
-            cada uma pensada para entregar resultados reais com o mais alto padrão de qualidade.
+            <strong>+150 fÃ³rmulas desenvolvidas</strong> por especialistas em nutriÃ§Ã£o â€”
+            cada uma pensada para entregar resultados reais com o mais alto padrÃ£o de qualidade.
           </div>
           <p>
             Trabalhamos com fornecedores selecionados e testes rigorosos para garantir
-            excelência em cada produto que chega até você.
+            excelÃªncia em cada produto que chega atÃ© vocÃª.
           </p>
           <div class="sobre-grid-mini">
             <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-leaf"></i></div>100% Ingredientes Naturais</div>
@@ -1057,12 +1075,12 @@
         <div class="selo-item fade-up">
           <i class="fas fa-leaf"></i>
           <h4>100% Natural</h4>
-          <p>Zero aditivos químicos ou sintéticos</p>
+          <p>Zero aditivos quÃ­micos ou sintÃ©ticos</p>
         </div>
         <div class="selo-item fade-up">
           <i class="fas fa-trophy"></i>
-          <h4>+150 Fórmulas</h4>
-          <p>Expertise em nutrição e desenvolvimento</p>
+          <h4>+150 FÃ³rmulas</h4>
+          <p>Expertise em nutriÃ§Ã£o e desenvolvimento</p>
         </div>
         <div class="selo-item fade-up">
           <i class="fas fa-star"></i>
@@ -1078,40 +1096,40 @@
     <div class="container">
       <div class="text-center fade-up">
         <span class="section-tag"><i class="fas fa-comments"></i> Clientes Reais</span>
-        <h2 class="section-title">Quem já usou <span class="accent">recomenda</span></h2>
-        <p class="section-desc mx-auto">Veja o que nossos clientes estão dizendo sobre os resultados.</p>
+        <h2 class="section-title">Quem jÃ¡ usou <span class="accent">recomenda</span></h2>
+        <p class="section-desc mx-auto">Veja o que nossos clientes estÃ£o dizendo sobre os resultados.</p>
       </div>
       <div class="depo-grid">
         <div class="depo-card fade-up">
-          <div class="depo-estrelas">★★★★★</div>
-          <p class="depo-texto"><i class="fas fa-quote-left"></i>Comprei o AN-T para dores nas articulações. Em 2 semanas já senti diferença. Recomendo de olhos fechados!</p>
+          <div class="depo-estrelas">â˜…â˜…â˜…â˜…â˜…</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Comprei o AN-T para dores nas articulaÃ§Ãµes. Em 2 semanas jÃ¡ senti diferenÃ§a. Recomendo de olhos fechados!</p>
           <div class="depo-autor">
             <div class="depo-avatar">CM</div>
             <div>
               <div class="depo-nome">Carlos M.</div>
-              <div class="depo-idade">54 anos • Joinville</div>
+              <div class="depo-idade">54 anos â€¢ Joinville</div>
             </div>
           </div>
         </div>
         <div class="depo-card fade-up">
-          <div class="depo-estrelas">★★★★★</div>
-          <p class="depo-texto"><i class="fas fa-quote-left"></i>O Bluwey mudou minha disposição. Voltei a me sentir como aos 30 anos. Produto nota 10!</p>
+          <div class="depo-estrelas">â˜…â˜…â˜…â˜…â˜…</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>O Bluwey mudou minha disposiÃ§Ã£o. Voltei a me sentir como aos 30 anos. Produto nota 10!</p>
           <div class="depo-autor">
             <div class="depo-avatar">RS</div>
             <div>
               <div class="depo-nome">Roberto S.</div>
-              <div class="depo-idade">48 anos • Garuva</div>
+              <div class="depo-idade">48 anos â€¢ Garuva</div>
             </div>
           </div>
         </div>
         <div class="depo-card fade-up">
-          <div class="depo-estrelas">★★★★★</div>
-          <p class="depo-texto"><i class="fas fa-quote-left"></i>Atendimento excelente e os produtos são realmente naturais. Minha energia melhorou muito!</p>
+          <div class="depo-estrelas">â˜…â˜…â˜…â˜…â˜…</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Atendimento excelente e os produtos sÃ£o realmente naturais. Minha energia melhorou muito!</p>
           <div class="depo-autor">
             <div class="depo-avatar">AL</div>
             <div>
-              <div class="depo-nome">Antônio L.</div>
-              <div class="depo-idade">62 anos • Joinville</div>
+              <div class="depo-nome">AntÃ´nio L.</div>
+              <div class="depo-idade">62 anos â€¢ Joinville</div>
             </div>
           </div>
         </div>
@@ -1124,8 +1142,8 @@
     <div class="container">
       <div class="text-center fade-up">
         <span class="section-tag"><i class="fas fa-flask"></i> Nossos Produtos</span>
-        <h2 class="section-title"><span class="accent">AN-T</span> & <span class="accent">Bluwey</span></h2>
-        <p class="section-desc mx-auto">Dois produtos premium desenvolvidos com a qualidade BluAnt para oferecer o melhor da natureza.</p>
+        <h2 class="section-title"><span class="accent">AN-T</span> & <span class="accent">Bluwey</span> & <span class="accent" style="color:var(--helofemme-color)">Helofemme</span></h2>
+        <p class="section-desc mx-auto">TrÃªs produtos premium desenvolvidos com a qualidade BluAnt para oferecer o melhor da natureza.</p>
       </div>
       <div class="produtos-grid">
         <!-- AN-T -->
@@ -1136,16 +1154,16 @@
           </div>
           <div class="produto-body">
             <h3>AN-T</h3>
-            <div class="produto-subtitulo">🌿 Combate à Inflamação & Bem-Estar</div>
+            <div class="produto-subtitulo">ðŸŒ¿ Combate Ã  InflamaÃ§Ã£o & Bem-Estar</div>
             <p class="produto-desc">
-              Fórmula inovadora para combater inflamação, proporcionando alívio e bem-estar
+              FÃ³rmula inovadora para combater inflamaÃ§Ã£o, proporcionando alÃ­vio e bem-estar
               para quem sofre de dor e desconforto.
             </p>
             <div class="produto-beneficios">
-              <span class="produto-beneficio"><i class="fas fa-check"></i> Dor crônica e aguda</span>
-              <span class="produto-beneficio"><i class="fas fa-check"></i> Reduz inflamação e desconforto</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Dor crÃ´nica e aguda</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Reduz inflamaÃ§Ã£o e desconforto</span>
               <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora qualidade de vida</span>
-              <span class="produto-beneficio"><i class="fas fa-check"></i> Fortalece o sistema imunológico</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Fortalece o sistema imunolÃ³gico</span>
             </div>
             <div class="produto-footer">
               <div class="produto-preco-area">
@@ -1166,17 +1184,17 @@
           </div>
           <div class="produto-body">
             <h3>Bluwey</h3>
-            <div class="produto-subtitulo">💪 Saúde Sexual & Energia</div>
+            <div class="produto-subtitulo">ðŸ’ª SaÃºde Sexual & Energia</div>
             <p class="produto-desc">
-              Suplemento que está transformando a forma de como os homens abordam a saúde sexual.
-              O Bluwey é 100% natural.
+              Suplemento que estÃ¡ transformando a forma de como os homens abordam a saÃºde sexual.
+              O Bluwey Ã© 100% natural.
             </p>
             <div class="produto-beneficios">
               <span class="produto-beneficio"><i class="fas fa-check"></i> 100% natural</span>
               <span class="produto-beneficio"><i class="fas fa-check"></i> Aumenta a energia</span>
               <span class="produto-beneficio"><i class="fas fa-check"></i> Aumenta a libido</span>
-              <span class="produto-beneficio"><i class="fas fa-check"></i> Prolonga a duração</span>
-              <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora a saúde geral</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Prolonga a duraÃ§Ã£o</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora a saÃºde geral</span>
             </div>
             <div class="produto-footer">
               <div class="produto-preco-area">
@@ -1185,6 +1203,36 @@
                 <span class="produto-preco-parcela"></span>
               </div>
               <button class="produto-btn-comprar" onclick='comprar("Bluwey","https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Bluwey%20(R%24%20143%2C98)")'><i class="fab fa-whatsapp"></i> Pedir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Helofemme -->
+        <div class="produto-card helofemme fade-up">
+          <div class="produto-img">
+            <img src="helofemme.png" alt="Helofemme" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />
+            <span class="produto-tag">Novo</span>
+          </div>
+          <div class="produto-body">
+            <h3>Helofemme</h3>
+            <div class="produto-subtitulo">ðŸŒ¸ SaÃºde & Vitalidade Feminina</div>
+            <p class="produto-desc">
+              Suplemento desenvolvido especialmente para o bem-estar feminino, com ativos naturais que auxiliam no equilÃ­brio hormonal e na vitalidade da mulher moderna.
+            </p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Bem-estar feminino</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> EquilÃ­brio hormonal</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Vitalidade e energia</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> 100% natural</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> SaÃºde integral da mulher</span>
+            </div>
+            <div class="produto-footer">
+              <div class="produto-preco-area">
+                <span class="produto-preco-antigo">De R$ 199,90</span>
+                <span class="produto-preco-atual">R$ 180,00</span>
+                <span class="produto-preco-parcela"></span>
+              </div>
+              <button class="produto-btn-comprar" onclick='comprar("Helofemme","https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Helofemme%20-%20R%24%20180%2C00")'><i class="fab fa-whatsapp"></i> Pedir</button>
             </div>
           </div>
         </div>
@@ -1197,19 +1245,19 @@
     <div class="container">
       <div class="text-center fade-up">
         <span class="section-tag"><i class="fas fa-gem"></i> Por que escolher</span>
-        <h2 class="section-title">Qualidade que faz a <span class="accent">diferença</span></h2>
-        <p class="section-desc mx-auto">Compromisso com sua saúde em cada detalhe.</p>
+        <h2 class="section-title">Qualidade que faz a <span class="accent">diferenÃ§a</span></h2>
+        <p class="section-desc mx-auto">Compromisso com sua saÃºde em cada detalhe.</p>
       </div>
       <div class="beneficios-grid">
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-certificate"></i></div>
           <h3>Qualidade Premium</h3>
-          <p>Produtos rigorosamente testados e selecionados para garantir a melhor experiência.</p>
+          <p>Produtos rigorosamente testados e selecionados para garantir a melhor experiÃªncia.</p>
         </div>
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-leaf"></i></div>
           <h3>100% Natural</h3>
-          <p>Ingredientes naturais de alta pureza, sem aditivos químicos ou conservantes artificiais.</p>
+          <p>Ingredientes naturais de alta pureza, sem aditivos quÃ­micos ou conservantes artificiais.</p>
         </div>
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-truck"></i></div>
@@ -1219,17 +1267,17 @@
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-headset"></i></div>
           <h3>Atendimento Personalizado</h3>
-          <p>Tire suas dúvidas diretamente conosco pelo WhatsApp. Recomendamos o produto ideal.</p>
+          <p>Tire suas dÃºvidas diretamente conosco pelo WhatsApp. Recomendamos o produto ideal.</p>
         </div>
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-flask"></i></div>
-          <h3>+150 Fórmulas</h3>
-          <p>Mais de 150 fórmulas desenvolvidas com pesquisa e expertise em nutrição.</p>
+          <h3>+150 FÃ³rmulas</h3>
+          <p>Mais de 150 fÃ³rmulas desenvolvidas com pesquisa e expertise em nutriÃ§Ã£o.</p>
         </div>
         <div class="beneficio-card fade-up">
           <div class="beneficio-icon"><i class="fas fa-heart"></i></div>
           <h3>Bem-Estar Real</h3>
-          <p>Focado em resultados que transformam sua saúde, energia e qualidade de vida.</p>
+          <p>Focado em resultados que transformam sua saÃºde, energia e qualidade de vida.</p>
         </div>
       </div>
     </div>
@@ -1242,28 +1290,28 @@
       <div class="text-center fade-up">
         <span class="section-tag"><i class="fas fa-map-pin"></i> Retirada</span>
         <h2 class="section-title">Pegue seu pedido <span class="accent">sem taxa</span></h2>
-        <p class="section-desc mx-auto">Faça seu pedido pelo WhatsApp e retire em um dos nossos pontos. Simples e sem custo adicional.</p>
+        <p class="section-desc mx-auto">FaÃ§a seu pedido pelo WhatsApp e retire em um dos nossos pontos. Simples e sem custo adicional.</p>
       </div>
       <div class="retirada-grid">
         <div class="retirada-card joinville fade-up">
           <img src="foto%20joinville.png" alt="Joinville" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin-bottom:.8rem;" onerror="this.style.display='none'" />
-          <span class="retirada-icon">🏙️</span>
+          <span class="retirada-icon">ðŸ™ï¸</span>
           <h3>Joinville</h3>
-          <div class="retirada-destaque">📍 Rua XV de Outubro, 180 — Rio Bonito</div>
-          <p class="retirada-endereco">Barbearia Barba Negra LN — Agende pelo WhatsApp</p>
+          <div class="retirada-destaque">ðŸ“ Rua XV de Outubro, 180 â€” Rio Bonito</div>
+          <p class="retirada-endereco">Barbearia Barba Negra LN â€” Agende pelo WhatsApp</p>
           <div class="retirada-actions">
-            <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20retirar%20em%20Joinville" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">📱 WhatsApp</a>
+            <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20retirar%20em%20Joinville" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">ðŸ“± WhatsApp</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" class="retirada-btn-maps"><i class="fas fa-map-marker-alt"></i> Maps</a>
           </div>
         </div>
         <div class="retirada-card garuva fade-up">
           <img src="foto%20garuva.png" alt="Garuva" style="width:100%;height:180px;object-fit:cover;border-radius:8px 8px 0 0;margin-bottom:.8rem;" onerror="this.style.display='none'" />
-          <span class="retirada-icon">🌊</span>
+          <span class="retirada-icon">ðŸŒŠ</span>
           <h3>Garuva</h3>
-          <div class="retirada-destaque">📍 Rua Salvador Oliva, Nº 88 — Próx. Mat. Construção Patrícia</div>
-          <p class="retirada-endereco">Retire em Garuva também. Próximo ao Materiais de Construção Patrícia!</p>
+          <div class="retirada-destaque">ðŸ“ Rua Salvador Oliva, NÂº 88 â€” PrÃ³x. Mat. ConstruÃ§Ã£o PatrÃ­cia</div>
+          <p class="retirada-endereco">Retire em Garuva tambÃ©m. PrÃ³ximo ao Materiais de ConstruÃ§Ã£o PatrÃ­cia!</p>
           <div class="retirada-actions">
-            <a href="https://wa.me/554789082163?text=Ol%C3%A1!%20Quero%20retirar%20em%20Garuva" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">📱 WhatsApp</a>
+            <a href="https://wa.me/554789082163?text=Ol%C3%A1!%20Quero%20retirar%20em%20Garuva" target="_blank" class="btn-whatsapp" style="padding:.6rem 1.2rem;font-size:.8rem">ðŸ“± WhatsApp</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Materiais+de+Construcao+Patricia+Garuva+SC" target="_blank" class="retirada-btn-maps"><i class="fas fa-map-marker-alt"></i> Maps</a>
           </div>
         </div>
@@ -1289,19 +1337,19 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <h4>✨ <span>Blu</span>Ant</h4>
-        <p>AN-T e Bluwey — suplementos premium 100% naturais. +150 fórmulas desenvolvidas por especialistas em nutrição.</p>
+        <h4>âœ¨ <span>Blu</span>Ant</h4>
+        <p>AN-T e Bluwey â€” suplementos premium 100% naturais. +150 fÃ³rmulas desenvolvidas por especialistas em nutriÃ§Ã£o.</p>
       </div>
       <div class="footer-col">
         <h5>Links</h5>
         <a href="#produtos">AN-T & Bluwey</a>
-        <a href="#beneficios">Benefícios</a>
+        <a href="#beneficios">BenefÃ­cios</a>
         <a href="#retirada">Retirada</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 BluAnt — Todos os direitos reservados.</span>
-      <span>Produtos 100% Naturais • Qualidade Premium</span>
+      <span>Â© 2026 BluAnt â€” Todos os direitos reservados.</span>
+      <span>Produtos 100% Naturais â€¢ Qualidade Premium</span>
     </div>
   </footer>
 
@@ -1309,6 +1357,179 @@
   <div class="whatsapp-float">
     <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="whatsapp-float-btn"><i class="fab fa-whatsapp"></i> <span>Joinville</span></a>
     <a href="https://wa.me/554789082163?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20BluAnt." target="_blank" class="whatsapp-float-btn gar"><i class="fab fa-whatsapp"></i> <span>Garuva</span></a>
+  </div>
+
+    <!-- LEAD FORM - POPUP -->
+  <div class="lead-overlay" id="leadOverlay">
+    <div class="lead-modal">
+      <button class="lead-close" onclick="fecharLead()"><i class="fas fa-times"></i></button>
+      <div class="lead-icon">ðŸ’Š</div>
+      <h3>Quer saber mais?</h3>
+      <p class="lead-desc">Deixe seu contato que a gente te explica tudinho sobre o <strong>AN-T</strong> e <strong>Bluwey</strong> sem compromisso!</p>
+      <form id="leadForm" onsubmit="enviarLead(event)">
+        <input type="text" id="leadNome" placeholder="Seu nome" required />
+        <input type="tel" id="leadWhatsApp" placeholder="Seu WhatsApp com DDD" required />
+        <select id="leadInteresse" required>
+          <option value="">Qual produto te interessou?</option>
+          <option value="AN-T">AN-T (Anti-inflamatÃ³rio)</option>
+          <option value="Bluwey">Bluwey (SaÃºde Masculina)</option>
+          <option value="Kit">Kit Completo (AN-T + Bluwey)</option>
+        </select>
+        <button type="submit" class="lead-btn"><i class="fab fa-whatsapp"></i> Quero saber mais!</button>
+      </form>
+      <p class="lead-footer">ðŸ”’ Seus dados estÃ£o seguros. SÃ³ vamos usar pra te atender.</p>
+    </div>
+  </div>
+
+  <style>
+    .lead-overlay {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(6px);
+      z-index: 5000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .lead-overlay.active { display: flex; }
+    .lead-modal {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 440px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      animation: modalIn .3s ease;
+      text-align: center;
+    }
+    .lead-close {
+      position: absolute; top: .8rem; right: .8rem;
+      width: 32px; height: 32px;
+      background: #f0f0f0; border: none;
+      border-radius: 50%; font-size: 1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .3s;
+    }
+    .lead-close:hover { background: #e0e0e0; }
+    .lead-icon { font-size: 3rem; margin-bottom: .5rem; }
+    .lead-modal h3 { font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: .3rem; }
+    .lead-desc { font-size: .85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 1.2rem; }
+    .lead-modal input, .lead-modal select {
+      width: 100%;
+      padding: .8rem 1rem;
+      border: 2px solid #e8e8e8;
+      border-radius: 12px;
+      font-size: .85rem;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: .7rem;
+      outline: none;
+      transition: border .3s;
+      background: #fafafa;
+    }
+    .lead-modal input:focus, .lead-modal select:focus {
+      border-color: var(--accent);
+      background: #fff;
+    }
+    .lead-btn {
+      width: 100%;
+      padding: .9rem;
+      background: linear-gradient(135deg, #25D366, #1da851);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: all .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
+    .lead-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,211,102,.3); }
+    .lead-footer { font-size: .7rem; color: var(--text-muted); margin-top: .8rem; }
+    .lead-sucesso {
+      display: none;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .lead-sucesso.active { display: block; }
+    .lead-sucesso .check { font-size: 3rem; color: #25D366; margin-bottom: .5rem; }
+    .lead-sucesso h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: .3rem; }
+    .lead-sucesso p { font-size: .85rem; color: var(--text-light); }
+  </style>
+
+  <script>
+    // LEAD CAPTURE
+    var leadTimeout;
+
+    function mostrarLead() {
+      var overlay = document.getElementById('leadOverlay');
+      if (overlay && !overlay.classList.contains('active')) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function fecharLead() {
+      document.getElementById('leadOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function enviarLead(event) {
+      event.preventDefault();
+      var nome = document.getElementById('leadNome').value.trim();
+      var wpp = document.getElementById('leadWhatsApp').value.trim();
+      var interesse = document.getElementById('leadInteresse').value;
+
+      if (!nome || !wpp || !interesse) return;
+
+      // Salva no localStorage
+      var leads = JSON.parse(localStorage.getItem('bluant_leads') || '[]');
+      leads.push({ nome: nome, wpp: wpp, interesse: interesse, data: new Date().toLocaleString('pt-BR') });
+      localStorage.setItem('bluant_leads', JSON.stringify(leads));
+
+      // Mostra sucesso
+      var form = document.getElementById('leadForm');
+      var sucesso = document.getElementById('leadSucesso');
+      form.style.display = 'none';
+      sucesso.classList.add('active');
+
+      // Envia pro seu WhatsApp
+      var msg = encodeURIComponent('ðŸ†• Novo lead!\n\nNome: ' + nome + '\nWhatsApp: ' + wpp + '\nInteresse: ' + interesse);
+      setTimeout(function() {
+        window.open('https://wa.me/5547984202188?text=' + msg, '_blank');
+      }, 800);
+    }
+
+    // Mostra o popup depois de 30 segundos
+    window.addEventListener('load', function() {
+      leadTimeout = setTimeout(mostrarLead, 30000);
+    });
+
+    // TambÃ©m mostra se a pessoa tentar sair da pÃ¡gina
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0) {
+        var overlay = document.getElementById('leadOverlay');
+        if (overlay && !overlay.classList.contains('active')) {
+          mostrarLead();
+        }
+      }
+    });
+
+    // Fecha se clicar fora
+    document.getElementById('leadOverlay').addEventListener('click', function(e) {
+      if (e.target === this) fecharLead();
+    });
+  </script>
+
+  <div class="lead-sucesso" id="leadSucesso">
+    <div class="check">âœ…</div>
+    <h4>Recebemos seu contato!</h4>
+    <p>Vamos te chamar no WhatsApp agora mesmo ðŸ˜Š</p>
   </div>
 
   <!-- MODAIS -->
@@ -1331,36 +1552,53 @@
       ant: {
         icon: '<i class="fas fa-leaf" style="color:#2d6a4f"></i>',
         nome: "AN-T",
-        desc: "Fórmula inovadora para combater inflamação, proporcionando alívio e bem-estar para quem sofre de dor e desconforto.",
+        desc: "FÃ³rmula inovadora para combater inflamaÃ§Ã£o, proporcionando alÃ­vio e bem-estar para quem sofre de dor e desconforto.",
         beneficios: [
-          "Ajuda na dor crônica e aguda",
-          "Redução da inflamação e do desconforto",
+          "Ajuda na dor crÃ´nica e aguda",
+          "ReduÃ§Ã£o da inflamaÃ§Ã£o e do desconforto",
           "Melhoria da qualidade de vida e bem-estar",
-          "Fortalecimento do sistema imunológico",
-          "Suporte à saúde e bem-estar social"
+          "Fortalecimento do sistema imunolÃ³gico",
+          "Suporte Ã  saÃºde e bem-estar social"
         ],
-        comoUsar: "Tomar 1 cápsula ao dia.",
+        comoUsar: "Tomar 1 cÃ¡psula ao dia.",
         wpp: "https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20AN-T%20-%20R%24%20144%2C27",
-        preco: "R$ 144,27",
-        composicao: "Fórmula inovadora 100% natural",
-        rendimento: "30 cápsulas"
+        preco: "R$ 180,00",
+        composicao: "FÃ³rmula inovadora 100% natural",
+        rendimento: "30 cÃ¡psulas"
       },
       bluwey: {
         icon: '<i class="fas fa-water" style="color:#1a6fa0"></i>',
         nome: "Bluwey",
-        desc: "Suplemento que está transformando a forma de como os homens abordam a saúde sexual. O Bluwey é 100% natural.",
+        desc: "Suplemento que estÃ¡ transformando a forma de como os homens abordam a saÃºde sexual. O Bluwey Ã© 100% natural.",
         beneficios: [
           "100% natural",
           "Aumenta a energia",
           "Aumenta a libido",
-          "Prolonga a duração",
-          "Melhora a saúde geral"
+          "Prolonga a duraÃ§Ã£o",
+          "Melhora a saÃºde geral"
         ],
-        comoUsar: "Tomar 1 cápsula ao dia.",
+        comoUsar: "Tomar 1 cÃ¡psula ao dia.",
         wpp: "https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20Bluwey%20-%20R%24%20143%2C98",
         preco: "R$ 143,98",
-        composicao: "Fórmula 100% natural",
-        rendimento: "30 cápsulas"
+        composicao: "FÃ³rmula 100% natural",
+        rendimento: "30 cÃ¡psulas"
+      },
+      helofemme: {
+        icon: '<i class="fas fa-female" style="color:#c2185b"></i>',
+        nome: "Helofemme",
+        desc: "Suplemento desenvolvido especialmente para o bem-estar feminino, com ativos naturais que auxiliam no equilÃ­brio hormonal e na vitalidade da mulher moderna.",
+        beneficios: [
+          "Bem-estar feminino completo",
+          "EquilÃ­brio hormonal natural",
+          "Vitalidade e energia diÃ¡ria",
+          "100% natural e seguro",
+          "SaÃºde integral da mulher"
+        ],
+        comoUsar: "Tomar 1 cÃ¡psula ao dia.",
+        wpp: "https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20o%20Helofemme%20-%20R%24%20180%2C00",
+        preco: "R$ 180,00",
+        composicao: "FÃ³rmula 100% natural",
+        rendimento: "30 cÃ¡psulas"
       }
     };
 
@@ -1374,11 +1612,11 @@
       h += '<h3>' + p.nome + '</h3>';
       h += '<div class="modal-preco">' + p.preco + '</div>';
       h += '<p>' + p.desc + '</p>';
-      h += '<h4><i class="fas fa-flask" style="color:var(--accent)"></i> Composição</h4>';
+      h += '<h4><i class="fas fa-flask" style="color:var(--accent)"></i> ComposiÃ§Ã£o</h4>';
       h += '<p>' + p.composicao + '</p>';
       h += '<h4><i class="fas fa-box" style="color:var(--gold)"></i> Rendimento</h4>';
       h += '<p>' + p.rendimento + '</p>';
-      h += '<h4><i class="fas fa-check-circle" style="color:var(--ant-color)"></i> Benefícios</h4><ul>';
+      h += '<h4><i class="fas fa-check-circle" style="color:var(--ant-color)"></i> BenefÃ­cios</h4><ul>';
       for (var i = 0; i < p.beneficios.length; i++) h += '<li>' + p.beneficios[i] + '</li>';
       h += '</ul>';
       h += '<h4><i class="fas fa-book" style="color:var(--gold)"></i> Como Usar</h4>';
@@ -1394,39 +1632,47 @@
       document.body.style.overflow = '';
     }
 
-    var precoUni = 144.125;
+    var precoUni = 156;
 
     function comprar() {
       fecharModal();
-      var h = '<div class="local-modal-title">🛒 Monte seu <span style="color:var(--gold)">Pedido</span></div>';
-      h += '<div class="local-modal-subtitle">Escolha as quantidades de cada produto (mín. 2 unid. para desconto no PIX)</div>';
+      var h = '<div class="local-modal-title">ðŸ›’ Monte seu <span style="color:var(--gold)">Pedido</span></div>';
+      h += '<div class="local-modal-subtitle">Escolha as quantidades de cada produto (mÃ­n. 2 unid. para desconto no PIX)</div>';
       h += '<div style="margin:1rem 0">';
       // AN-T
       h += '<div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--ant-pale);border-radius:var(--radius-sm);margin-bottom:.5rem;">';
-      h += '<div><strong style="color:var(--ant-color);font-size:1rem">AN-T</strong><br><span style="font-size:.75rem;color:var(--text-muted)">Combate à inflamação</span></div>';
+      h += '<div><strong style="color:var(--ant-color);font-size:1rem">AN-T</strong><br><span style="font-size:.75rem;color:var(--text-muted)">Combate Ã  inflamaÃ§Ã£o</span></div>';
       h += '<div style="display:flex;align-items:center;gap:.5rem;">';
-      h += '<button onclick="mudarQtd(\'ant\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>';
+      h += '<button onclick="mudarQtd(\'ant\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">âˆ’</button>';
       h += '<span id="qtd-ant" style="font-size:1.2rem;font-weight:700;min-width:30px;text-align:center">0</span>';
       h += '<button onclick="mudarQtd(\'ant\',1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--ant-color);background:var(--ant-color);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>';
       h += '</div></div>';
       // Bluwey
       h += '<div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--bluwey-pale);border-radius:var(--radius-sm);margin-bottom:1rem;">';
-      h += '<div><strong style="color:var(--bluwey-color);font-size:1rem">Bluwey</strong><br><span style="font-size:.75rem;color:var(--text-muted)">Saúde sexual & energia</span></div>';
+      h += '<div><strong style="color:var(--bluwey-color);font-size:1rem">Bluwey</strong><br><span style="font-size:.75rem;color:var(--text-muted)">SaÃºde sexual & energia</span></div>';
       h += '<div style="display:flex;align-items:center;gap:.5rem;">';
-      h += '<button onclick="mudarQtd(\'bluwey\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>';
+      h += '<button onclick="mudarQtd(\'bluwey\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">âˆ’</button>';
       h += '<span id="qtd-bluwey" style="font-size:1.2rem;font-weight:700;min-width:30px;text-align:center">0</span>';
       h += '<button onclick="mudarQtd(\'bluwey\',1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--bluwey-color);background:var(--bluwey-color);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>';
       h += '</div></div>';
+      // Helofemme
+      h += '<div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--helofemme-pale);border-radius:var(--radius-sm);margin-bottom:1rem;">';
+      h += '<div><strong style="color:var(--helofemme-color);font-size:1rem">Helofemme</strong><br><span style="font-size:.75rem;color:var(--text-muted)">SaÃºde & vitalidade feminina</span></div>';
+      h += '<div style="display:flex;align-items:center;gap:.5rem;">';
+      h += '<button onclick="mudarQtd(\'helofemme\',-1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--card-border);background:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">âˆ’</button>';
+      h += '<span id="qtd-helofemme" style="font-size:1.2rem;font-weight:700;min-width:30px;text-align:center">0</span>';
+      h += '<button onclick="mudarQtd(\'helofemme\',1)" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--helofemme-color);background:var(--helofemme-color);color:#fff;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center">+</button>';
+      h += '</div></div>';
       // Forma de pagamento
       h += '<div style="margin-bottom:1rem">';
-      h += '<p style="font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.5rem">💳 Forma de pagamento:</p>';
+      h += '<p style="font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.5rem">ðŸ’³ Forma de pagamento:</p>';
       h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">';
       h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--gold);border-radius:var(--radius-sm);cursor:pointer;background:var(--gold-pale)">';
       h += '<input type="radio" name="pagamento" value="pix" checked style="accent-color:var(--gold)">';
       h += '<div><span style="font-weight:600;font-size:.8rem">PIX</span><br><span style="font-size:.65rem;color:var(--text-muted)">Ganha desconto</span></div></label>';
       h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer">';
       h += '<input type="radio" name="pagamento" value="credito">';
-      h += '<div><span style="font-weight:600;font-size:.8rem">Cartão</span><br><span style="font-size:.65rem;color:var(--text-muted)">Crédito/Débito</span></div></label>';
+      h += '<div><span style="font-weight:600;font-size:.8rem">CartÃ£o</span><br><span style="font-size:.65rem;color:var(--text-muted)">CrÃ©dito/DÃ©bito</span></div></label>';
       h += '<label class="pag-opcao" style="display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem;border:2px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer">';
       h += '<input type="radio" name="pagamento" value="dinheiro">';
       h += '<div><span style="font-weight:600;font-size:.8rem">Dinheiro</span><br><span style="font-size:.65rem;color:var(--text-muted)">Retirada</span></div></label>';
@@ -1447,13 +1693,15 @@
       });
     }
 
-    var qtdAnt = 0, qtdBluwey = 0;
+    var qtdAnt = 0, qtdBluwey = 0, qtdHelofemme = 0;
 
     function mudarQtd(tipo, delta) {
       if (tipo === 'ant') { qtdAnt = Math.max(0, qtdAnt + delta); }
-      else { qtdBluwey = Math.max(0, qtdBluwey + delta); }
+      else if (tipo === 'bluwey') { qtdBluwey = Math.max(0, qtdBluwey + delta); }
+      else { qtdHelofemme = Math.max(0, qtdHelofemme + delta); }
       document.getElementById('qtd-ant').textContent = qtdAnt;
       document.getElementById('qtd-bluwey').textContent = qtdBluwey;
+      document.getElementById('qtd-helofemme').textContent = qtdHelofemme;
       atualizarResumo();
     }
 
@@ -1463,7 +1711,7 @@
     }
 
     function atualizarResumo() {
-      var total = qtdAnt + qtdBluwey;
+      var total = qtdAnt + qtdBluwey + qtdHelofemme;
       var resumo = document.getElementById('resumo-pedido');
       var btn = document.getElementById('btn-finalizar');
       if (!resumo) return;
@@ -1479,6 +1727,7 @@
       var itens = [];
       if (qtdAnt > 0) itens.push(qtdAnt + 'x AN-T');
       if (qtdBluwey > 0) itens.push(qtdBluwey + 'x Bluwey');
+      if (qtdHelofemme > 0) itens.push(qtdHelofemme + 'x Helofemme');
       var html = '<div style="font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.3rem">' + itens.join(' + ') + '</div>';
       html += '<div style="font-size:.75rem;color:var(--text-muted)">' + total + ' unidade' + (total > 1 ? 's' : '') + '</div>';
       if (desconto > 0) {
@@ -1489,9 +1738,9 @@
         html += '<div style="font-size:1.4rem;font-weight:900;color:var(--text);margin:.3rem 0">R$ ' + subTotal + '</div>';
         if (pag !== 'pix' && total >= 2) {
           var pixPreco2 = total >= 3 ? (subTotal * 0.9).toFixed(0) : (subTotal * 0.95).toFixed(0);
-          html += '<div style="font-size:.7rem;color:var(--gold)">💡 No PIX fica R$ ' + pixPreco2 + '</div>';
+          html += '<div style="font-size:.7rem;color:var(--gold)">ðŸ’¡ No PIX fica R$ ' + pixPreco2 + '</div>';
         } else if (pag === 'pix' && total === 1) {
-          html += '<div style="font-size:.7rem;color:var(--gold)">⬆ Adicione mais 1 unidade e ganhe <strong>5% OFF</strong> no PIX!</div>';
+          html += '<div style="font-size:.7rem;color:var(--gold)">â¬† Adicione mais 1 unidade e ganhe <strong>5% OFF</strong> no PIX!</div>';
         }
       }
       resumo.innerHTML = html;
@@ -1499,44 +1748,45 @@
     }
 
     function finalizarPedido() {
-      var total = qtdAnt + qtdBluwey;
+      var total = qtdAnt + qtdBluwey + qtdHelofemme;
       if (total === 0) return;
       var itens = [];
       if (qtdAnt > 0) itens.push(qtdAnt + 'x AN-T');
       if (qtdBluwey > 0) itens.push(qtdBluwey + 'x Bluwey');
+      if (qtdHelofemme > 0) itens.push(qtdHelofemme + 'x Helofemme');
       var pag = getPagamento();
-      var pagLabel = pag === 'pix' ? 'PIX' : pag === 'credito' ? 'Cartão (Crédito/Débito)' : 'Dinheiro';
+      var pagLabel = pag === 'pix' ? 'PIX' : pag === 'credito' ? 'CartÃ£o (CrÃ©dito/DÃ©bito)' : 'Dinheiro';
       var subTotal = total * precoUni;
       var desconto = (pag === 'pix' && total >= 3) ? 0.10 : (pag === 'pix' && total === 2) ? 0.05 : 0;
       var totalDesc = desconto > 0 ? (subTotal * (1 - desconto)).toFixed(0) : subTotal;
       var itensStr = itens.join(' + ');
       var pagInfo = "Pagamento: " + pagLabel + ". Total: R$ " + totalDesc;
       fecharLocal();
-      var msgJlle = "Olá! Quero comprar produtos BluAnt e retirar em Joinville. " + itensStr + ". " + pagInfo;
-      var msgGar = "Olá! Quero comprar produtos BluAnt e retirar em Garuva. " + itensStr + ". " + pagInfo;
+      var msgJlle = "OlÃ¡! Quero comprar produtos BluAnt e retirar em Joinville. " + itensStr + ". " + pagInfo;
+      var msgGar = "OlÃ¡! Quero comprar produtos BluAnt e retirar em Garuva. " + itensStr + ". " + pagInfo;
       var wppJlle = "https://wa.me/5547984202188?text=" + encodeURIComponent(msgJlle);
       var wppGar = "https://wa.me/554789082163?text=" + encodeURIComponent(msgGar);
-      var h = '<div class="local-modal-title">📍 Onde você quer retirar?</div>';
+      var h = '<div class="local-modal-title">ðŸ“ Onde vocÃª quer retirar?</div>';
       h += '<div class="local-modal-subtitle">Escolha o local para retirar seu pedido</div>';
       h += '<div class="local-options">';
       h += '<div class="local-option" style="cursor:pointer;padding-bottom:1rem">';
       h += '<img src="foto%20joinville.png" alt="Joinville" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:.5rem;" onerror="this.style.display=\'none\'" />';
-      h += '<div class="local-option-icon">🏙️</div>';
+      h += '<div class="local-option-icon">ðŸ™ï¸</div>';
       h += '<h4>Joinville</h4>';
-      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua XV de Outubro, 180 — Rio Bonito</p>';
+      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua XV de Outubro, 180 â€” Rio Bonito</p>';
       h += '<div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-top:.4rem">';
       h += '<a href="' + wppJlle + '" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:#25D366;color:#fff;border-radius:50px;font-weight:600;font-size:.85rem;text-decoration:none;flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>';
-      h += '<button onclick="copiarEndereco(\'Rua XV de Outubro, 180 - Rio Bonito, Joinville - SC\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">📋 Copiar</button>';
+      h += '<button onclick="copiarEndereco(\'Rua XV de Outubro, 180 - Rio Bonito, Joinville - SC\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">ðŸ“‹ Copiar</button>';
       h += '<a href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Outubro+180+Rio+Bonito+Joinville+SC" target="_blank" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;text-decoration:none"><i class="fas fa-map-marker-alt"></i> Maps</a>';
       h += '</div></div>';
       h += '<div class="local-option" style="cursor:pointer;padding-bottom:1rem">';
       h += '<img src="foto%20garuva.png" alt="Garuva" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:.5rem;" onerror="this.style.display=\'none\'" />';
-      h += '<div class="local-option-icon">🌊</div>';
+      h += '<div class="local-option-icon">ðŸŒŠ</div>';
       h += '<h4>Garuva</h4>';
-      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua Salvador Oliva, 88 — Próx. Mat. Construção Patrícia</p>';
+      h += '<p style="font-size:.78rem;color:var(--text-muted)">Rua Salvador Oliva, 88 â€” PrÃ³x. Mat. ConstruÃ§Ã£o PatrÃ­cia</p>';
       h += '<div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-top:.4rem">';
       h += '<a href="' + wppGar + '" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.2rem;background:#25D366;color:#fff;border-radius:50px;font-weight:600;font-size:.85rem;text-decoration:none;flex:1;justify-content:center"><i class="fab fa-whatsapp"></i> Falar com Vendedor</a>';
-      h += '<button onclick="copiarEndereco(\'Rua Salvador Oliva, 88 - Garuva - SC (Próx. Mat. Construção Patrícia)\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">📋 Copiar</button>';
+      h += '<button onclick="copiarEndereco(\'Rua Salvador Oliva, 88 - Garuva - SC (PrÃ³x. Mat. ConstruÃ§Ã£o PatrÃ­cia)\')" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;cursor:pointer;font-family:Poppins,sans-serif">ðŸ“‹ Copiar</button>';
       h += '<a href="https://www.google.com/maps/search/?api=1&query=Materiais+de+Construcao+Patricia+Garuva+SC" target="_blank" style="display:inline-flex;align-items:center;gap:.3rem;padding:.6rem 1rem;background:rgba(26,111,160,.08);color:var(--accent);border:1px solid rgba(26,111,160,.15);border-radius:50px;font-weight:500;font-size:.8rem;text-decoration:none"><i class="fas fa-map-marker-alt"></i> Maps</a>';
       h += '</div></div>';
       h += '</div>';
@@ -1557,7 +1807,7 @@
         var t = document.getElementById('toast');
         if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }
         t.style.cssText = 'position:fixed;bottom:6rem;left:50%;transform:translateX(-50%);background:rgba(15,43,61,.9);color:#fff;padding:.6rem 1.5rem;border-radius:50px;font-size:.85rem;font-weight:500;z-index:9999;backdrop-filter:blur(8px);transition:all .4s;opacity:1';
-        t.textContent = '📋 Endereço copiado!';
+        t.textContent = 'ðŸ“‹ EndereÃ§o copiado!';
         setTimeout(function() { t.style.opacity = '0'; }, 2500);
       });
     }
