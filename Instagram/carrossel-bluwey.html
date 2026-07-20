@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel Educativo — Bluwey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0e1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .page-title {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+      text-align: center;
+    }
+    .page-sub {
+      color: #607080;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .page-sub i { color: #b388ff; }
+
+    /* ── Grid de slides ── */
+    .carrossel-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 1200px;
+    }
+
+    .slide-wrapper {
+      text-align: center;
+    }
+    .slide-wrapper .slide-label {
+      color: #b388ff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .slide-wrapper .slide-label .num {
+      color: #fff;
+      background: rgba(179,136,255,0.15);
+      padding: 0.1rem 0.5rem;
+      border-radius: 20px;
+    }
+
+    /* ── O post em si (proporção Instagram 1:1 ou 4:5) ── */
+    .post {
+      width: 400px;
+      height: 500px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background: #0f1a2e;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.06);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .post:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    }
+
+    /* Topo falso do Instagram */
+    .post-top {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .post-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a6fa0, #4a9bc7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .post-user {
+      flex: 1;
+      text-align: left;
+    }
+    .post-user .name {
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .post-user .sub {
+      color: #607080;
+      font-size: 0.6rem;
+    }
+    .post-dots { color: #fff; opacity: 0.6; font-size: 0.9rem; }
+
+    /* ── CONTEÚDO DO SLIDE ── */
+    .post-body {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Fundo gradiente por slide */
+    .post-body.grad-1 {
+      background: linear-gradient(160deg, #0a1628, #0f2b3d, #1a4a6a);
+    }
+    .post-body.grad-2 {
+      background: linear-gradient(160deg, #0a1628, #1a3a5a, #0f2b3d);
+    }
+    .post-body.grad-3 {
+      background: linear-gradient(160deg, #0a1628, #2d1b4e, #1a0f3d);
+    }
+    .post-body.grad-4 {
+      background: linear-gradient(160deg, #0a1628, #0f2b3d, #1a6fa0);
+    }
+    .post-body.grad-5 {
+      background: linear-gradient(160deg, #0a1628, #1a2e1a, #0f2b1a);
+    }
+    .post-body.grad-6 {
+      background: linear-gradient(160deg, #0a1628, #2d1b2e, #3d1a2a);
+    }
+
+    /* Partículas decorativas */
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particles span {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      animation: float 12s infinite ease-in-out;
+    }
+    .particles span:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; width: 4px; height: 4px; }
+    .particles span:nth-child(2) { top: 20%; right: 20%; animation-delay: 2s; width: 8px; height: 8px; }
+    .particles span:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; }
+    .particles span:nth-child(4) { bottom: 15%; right: 10%; animation-delay: 6s; width: 5px; height: 5px; }
+    .particles span:nth-child(5) { top: 50%; left: 80%; animation-delay: 8s; width: 3px; height: 3px; }
+    .particles span:nth-child(6) { top: 70%; left: 5%; animation-delay: 3s; width: 7px; height: 7px; }
+    .particles span:nth-child(7) { top: 5%; left: 50%; animation-delay: 7s; width: 4px; height: 4px; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-30px) scale(1.5); opacity: 0.2; }
+    }
+
+    /* Elementos decorativos */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .deco-circle.c1 { width: 300px; height: 300px; top: -80px; right: -80px; }
+    .deco-circle.c2 { width: 200px; height: 200px; bottom: -40px; left: -60px; }
+    .deco-circle.c3 { width: 150px; height: 150px; top: 30%; left: -40px; }
+
+    .post-body-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    /* Ícone decorativo */
+    .slide-icon-lg {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .slide-tag {
+      display: inline-block;
+      background: rgba(26,111,160,0.2);
+      border: 1px solid rgba(26,111,160,0.3);
+      color: #4a9bc7;
+      font-size: 0.55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 0.6rem;
+    }
+
+    .slide-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+    .slide-title .gold { color: #c7a26b; }
+    .slide-title .accent { color: #4a9bc7; }
+    .slide-title .green { color: #40916c; }
+    .slide-title .pink { color: #c77d9a; }
+    .slide-title .purple { color: #b388ff; }
+
+    .slide-desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.8rem;
+      line-height: 1.7;
+      max-width: 320px;
+      margin: 0.4rem auto 0;
+    }
+    .slide-desc strong { color: rgba(255,255,255,0.85); }
+
+    /* ── Lista de itens (benefícios) ── */
+    .slide-lista {
+      text-align: left;
+      max-width: 300px;
+      margin: 0.6rem auto 0;
+    }
+    .slide-lista li {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.72rem;
+      line-height: 2;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .slide-lista li i {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.5rem;
+      flex-shrink: 0;
+    }
+    .slide-lista li i.azul { background: rgba(26,111,160,0.2); color: #4a9bc7; }
+    .slide-lista li i.dourado { background: rgba(199,162,107,0.2); color: #c7a26b; }
+    .slide-lista li i.verde { background: rgba(64,145,108,0.2); color: #40916c; }
+
+    /* ── Box de destaque ── */
+    .slide-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin: 0.7rem auto 0;
+      max-width: 300px;
+      text-align: center;
+    }
+    .slide-box p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.72rem;
+      line-height: 1.6;
+    }
+    .slide-box strong { color: #fff; }
+
+    /* ── Bottom do post (like/comentários falsos) ── */
+    .post-bottom {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.6rem 1rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .post-bottom i { color: #fff; opacity: 0.6; font-size: 1rem; cursor: pointer; }
+    .post-bottom i.fa-heart:hover { color: #e74c3c; opacity: 1; }
+    .post-bottom .likes {
+      flex: 1;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.65rem;
+      text-align: left;
+    }
+
+    /* ── Indicador de carrossel ── */
+    .carrossel-indicator {
+      display: flex;
+      gap: 0.4rem;
+      justify-content: center;
+      margin: 1.5rem auto 0;
+      max-width: 1200px;
+    }
+    .carrossel-indicator .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      transition: all 0.3s;
+    }
+    .carrossel-indicator .dot.active { background: #4a9bc7; width: 24px; border-radius: 4px; }
+
+    .nav-info {
+      color: #607080;
+      font-size: 0.75rem;
+      margin-top: 1.5rem;
+      text-align: center;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .post { width: 340px; height: 440px; }
+      .slide-title { font-size: 1.5rem; }
+    }
+    @media (max-width: 500px) {
+      .post { width: 300px; height: 400px; }
+      .slide-title { font-size: 1.3rem; }
+      .carrossel-grid { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">📖 Carrossel Educativo — <span style="color:#4a9bc7">Bluwey</span></h1>
+  <p class="page-sub"><i class="fas fa-instagram"></i> Posts para Instagram &middot; Deslize para ver todos</p>
+
+  <!-- Grid de slides -->
+  <div class="carrossel-grid">
+
+    <!-- SLIDE 1 — Capa -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">1/8</span> • Capa</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-1">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">💪</span>
+            <span class="slide-tag">🔬 Tudo que você precisa saber</span>
+            <div class="slide-title">
+              O GUIA COMPLETO<br>
+              DO <span class="accent">BLUWEY</span>
+            </div>
+            <div class="slide-desc">
+              O suplemento <strong>100% natural</strong> que está transformando a
+              saúde masculina — <strong>energia, libido e performance</strong> em um único produto.
+            </div>
+            <div class="slide-box">
+              <p>✨ <strong>BluAnt</strong> — +150 fórmulas desenvolvidas por especialistas</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — O que é o Bluwey? -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">2/8</span> • O que é?</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-2">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c3"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">🧬</span>
+            <span class="slide-tag">🧪 O que é?</span>
+            <div class="slide-title" style="font-size:1.5rem;">
+              O que é o <span class="accent">Bluwey</span>?
+            </div>
+            <div class="slide-desc">
+              O <strong>Bluwey</strong> é um suplemento alimentar <strong>100% natural</strong>,
+              desenvolvido pela <strong>BluAnt</strong> para promover <strong>saúde sexual,
+              energia e vitalidade masculina</strong> de forma segura e eficaz.
+            </div>
+            <div class="slide-box">
+              <p>🌿 <strong>100% Natural</strong> • Sem químicos • Sem efeitos colaterais</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Benefícios -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">3/8</span> • Benefícios</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-3">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">📈</span>
+            <span class="slide-tag">✅ Benefícios</span>
+            <div class="slide-title" style="font-size:1.3rem;">
+              Principais <span class="purple">Benefícios</span>
+            </div>
+            <ul class="slide-lista">
+              <li><i class="fas fa-check azul"></i> Aumenta a <strong>energia e disposição</strong> no dia a dia</li>
+              <li><i class="fas fa-check dourado"></i> Eleva a <strong>libido</strong> e o desejo sexual</li>
+              <li><i class="fas fa-check azul"></i> <strong>Prolonga a duração</strong> e melhora a performance</li>
+              <li><i class="fas fa-check verde"></i> Recuperação <strong>pós-treino</strong> mais rápida</li>
+              <li><i class="fas fa-check dourado"></i> Melhora a <strong>saúde geral</strong> e bem-estar</li>
+            </ul>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 — Como age no corpo -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">4/8</span> • Como age?</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-4">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c2"></div>
+          <div class="deco-circle c3"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">⚡</span>
+            <span class="slide-tag">🔬 Como age no corpo</span>
+            <div class="slide-title" style="font-size:1.3rem;">
+              Como o <span class="accent">Bluwey</span> age?
+            </div>
+            <div class="slide-desc">
+              Sua fórmula combina ingredientes naturais que atuam em sinergia para:
+            </div>
+            <ul class="slide-lista">
+              <li><i class="fas fa-bolt azul"></i> Estimular a <strong>circulação sanguínea</strong></li>
+              <li><i class="fas fa-bolt dourado"></i> Equilibrar os <strong>hormônios</strong> naturais</li>
+              <li><i class="fas fa-bolt verde"></i> Aumentar a <strong>produção de óxido nítrico</strong></li>
+              <li><i class="fas fa-bolt azul"></i> Fornecer <strong>nutrientes essenciais</strong></li>
+            </ul>
+            <div class="slide-box">
+              <p>⏱ Resultados perceptíveis <strong>já nas primeiras semanas</strong> de uso</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 — Ingredientes Naturais -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">5/8</span> • Ingredientes</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-5">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c3"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">🌿</span>
+            <span class="slide-tag">🧪 Ingredientes</span>
+            <div class="slide-title" style="font-size:1.3rem;">
+              <span class="green">100% Natural</span>
+            </div>
+            <div class="slide-desc">
+              O Bluwey é feito com ingredientes naturalmente poderosos:
+            </div>
+            <ul class="slide-lista">
+              <li><i class="fas fa-leaf verde"></i> <strong>Tribulus Terrestris</strong> — libido e testosterona</li>
+              <li><i class="fas fa-leaf dourado"></i> <strong>Maca Peruana</strong> — energia e vitalidade</li>
+              <li><i class="fas fa-leaf verde"></i> <strong>Ginseng</strong> — disposição e foco</li>
+              <li><i class="fas fa-leaf dourado"></i> <strong>Zinco Quelado</strong> — saúde hormonal</li>
+              <li><i class="fas fa-leaf verde"></i> <strong>Ashwagandha</strong> — redução do estresse</li>
+            </ul>
+            <div class="slide-box">
+              <p>🌱 <strong>Zero aditivos químicos</strong> • Sem conservantes artificiais</p>
+            </div>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6 — Diferenciais -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">6/8</span> • Diferenciais</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-6">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">🏆</span>
+            <span class="slide-tag">⭐ Diferenciais</span>
+            <div class="slide-title" style="font-size:1.3rem;">
+              Por que escolher o <span class="pink">Bluwey</span>?
+            </div>
+            <ul class="slide-lista">
+              <li><i class="fas fa-star dourado"></i> <strong>+150 fórmulas</strong> desenvolvidas por especialistas</li>
+              <li><i class="fas fa-star dourado"></i> <strong>Registro ANVISA</strong> — produto regularizado</li>
+              <li><i class="fas fa-star dourado"></i> Matéria-prima <strong>selecionada</strong> e testada</li>
+              <li><i class="fas fa-star dourado"></i> <strong>Sem efeitos colaterais</strong> — uso seguro</li>
+              <li><i class="fas fa-star dourado"></i> <strong>+500 clientes</strong> satisfeitos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7 — Como usar -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">7/8</span> • Como usar</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-1">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c2"></div>
+          <div class="deco-circle c3"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">📋</span>
+            <span class="slide-tag">📌 Como usar</span>
+            <div class="slide-title" style="font-size:1.3rem;">
+              Modo de <span class="gold">Uso</span>
+            </div>
+            <div class="slide-box" style="max-width:320px;">
+              <p style="font-size:0.85rem;font-weight:700;color:#fff;">💊 <strong>2 cápsulas ao dia</strong></p>
+              <p style="margin-top:0.3rem;">Tomar uma cápsula pela manhã e outra à noite, ou conforme orientação do profissional de saúde.</p>
+            </div>
+            <div class="slide-lista" style="margin-top:0.5rem;">
+              <li><i class="fas fa-clock azul"></i> Uso contínuo para <strong>melhores resultados</strong></li>
+              <li><i class="fas fa-check-circle verde"></i> Efeito potencializado com <strong>alimentação equilibrada</strong></li>
+            </div>
+          </div>
+        </div>
+        <div class="post-bottom">
+          <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+          <span class="likes">↻ <strong>carrossel</strong></span>
+          <i class="far fa-bookmark"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8 — CTA Final -->
+    <div class="slide-wrapper">
+      <div class="slide-label"><span class="num">8/8</span> • CTA</div>
+      <div class="post">
+        <div class="post-top">
+          <div class="post-avatar">B</div>
+          <div class="post-user">
+            <div class="name">bluant.oficial</div>
+            <div class="sub">Publicado • <i class="fas fa-globe"></i></div>
+          </div>
+          <div class="post-dots">⋯</div>
+        </div>
+        <div class="post-body grad-4">
+          <div class="particles">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <div class="deco-circle c1"></div>
+          <div class="deco-circle c2"></div>
+          <div class="post-body-content">
+            <span class="slide-icon-lg">🔥</span>
+            <span class="slide-tag">🚀 Comece hoje</span>
+            <div class="slide-title" style="font-size:1.5rem;">
+              Chegou a hora de<br>
+              <span class="accent">transformar</span> sua <span class="gold">vitalidade</span>
+            </div>
+            <div class="slide-desc" style="margin-bottom:0.8rem;">
+  Peça já o seu <strong>Bluwey</strong> e sinta a diferença que só a natureza pode oferecer!
+</div>
+<div class="slide-box" style="background:rgba(37,211,102,0.1);border-color:rgba(37,211,102,0.2);max-width:280px;">
+  <p style="font-size:0.85rem;font-weight:700;color:#25D366;">
+    <i class="fab fa-whatsapp"></i> (47) 98420-2188
+  </p>
+  <p>Retirada em Joinville • Garuva • Sem taxa</p>
+</div>
+</div>
+</div>
+<div class="post-bottom">
+  <i class="far fa-heart"></i> <i class="far fa-comment"></i> <i class="far fa-paper-plane"></i>
+  <span class="likes">↻ <strong>carrossel</strong></span>
+  <i class="far fa-bookmark"></i>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Indicador -->
+<div class="carrossel-indicator">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<div class="nav-info">
+  📱 <strong>8 slides</strong> — Carrossel educativo sobre o Bluwey<br>
+  💡 Abra o arquivo no navegador para visualizar todos os posts lado a lado
+</div>
+
+</body>
+</html>

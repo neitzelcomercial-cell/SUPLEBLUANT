@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bluant — Suplementos Premium 100% Naturais</title>
+  <meta name="description" content="Bluant: AN-T e Bluwey — suplementos premium 100% naturais com registro ANVISA. +150 fórmulas desenvolvidas por especialistas em nutrição." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ═══════════════════════════════════════════
+       BLUANT — SITE INSTITUCIONAL PREMIUM
+       Tema: Azul + Laranja | Fundo: Branco/Azul Claro
+       ═══════════════════════════════════════════ */
+    :root {
+      --blue-deep: #0a2a44;
+      --blue-primary: #1a5276;
+      --blue-mid: #2980b9;
+      --blue-light: #5dade2;
+      --blue-pale: #d6eaf8;
+      --blue-bg: #eaf2f8;
+      --orange: #e67e22;
+      --orange-light: #f39c12;
+      --orange-pale: #fef5e7;
+      --orange-soft: #fdebd0;
+      --white: #ffffff;
+      --bg-light: #f0f6fa;
+      --text: #1a2a3a;
+      --text-light: #4a5a6a;
+      --text-muted: #8a9aaa;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow-sm: 0 2px 8px rgba(10,42,68,0.06);
+      --shadow-md: 0 8px 32px rgba(10,42,68,0.1);
+      --shadow-lg: 0 20px 60px rgba(10,42,68,0.12);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-light);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 1.5rem; }
+    .text-center { text-align: center; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .section { padding: 5rem 0; position: relative; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: var(--blue-mid);
+      font-weight: 600;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: .8rem;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: .8rem;
+      color: var(--text);
+    }
+    .section-title .blue { color: var(--blue-primary); }
+    .section-title .orange { color: var(--orange); }
+    .section-desc {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 20px rgba(26,82,118,.25);
+      cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,82,118,.35); }
+    .btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 20px rgba(230,126,34,.25);
+      cursor: pointer;
+    }
+    .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(230,126,34,.35); }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 15px rgba(37,211,102,.25);
+    }
+    .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: .9rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .4s ease;
+      background: transparent;
+    }
+    .header.scrolled {
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 20px rgba(0,0,0,.06);
+      padding: .6rem 2rem;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      text-decoration: none;
+    }
+    .header-logo-img { width: 38px; height: 38px; border-radius: 10px; object-fit: cover; }
+    .header-logo-text { font-weight: 800; font-size: 1.05rem; color: var(--text); }
+    .header-logo-text span.blue { color: var(--blue-primary); }
+    .header-logo-text span.orange { color: var(--orange); }
+    .nav { display: flex; gap: 1.8rem; align-items: center; }
+    .nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      transition: color .3s;
+      position: relative;
+    }
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--blue-primary), var(--orange));
+      transition: width .3s;
+    }
+    .nav a:hover { color: var(--blue-primary); }
+    .nav a:hover::after { width: 100%; }
+    .nav .nav-whatsapp {
+      background: #25D366;
+      color: #fff !important;
+      padding: .5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .78rem;
+    }
+    .nav .nav-whatsapp::after { display: none; }
+    .nav .nav-whatsapp:hover { background: #1da851; transform: translateY(-1px); color: #fff !important; }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-mobile {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
+    }
+    .nav-mobile.active { opacity: 1; pointer-events: all; }
+    .nav-mobile a { color: var(--text); text-decoration: none; font-size: 1.3rem; font-weight: 600; }
+    .nav-mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text); font-size: 2rem; cursor: pointer; }
+
+    /* ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 1.5rem 4rem;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(10,42,68,0.88) 0%, rgba(26,82,118,0.75) 40%, rgba(10,42,68,0.85) 100%);
+    }
+    .hero-deco {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-deco-1 {
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,126,34,0.12) 0%, transparent 70%);
+      top: -150px; right: -100px;
+      animation: floatGlow 8s ease-in-out infinite alternate;
+    }
+    .hero-deco-2 {
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(41,128,185,0.1) 0%, transparent 70%);
+      bottom: -100px; left: -80px;
+      animation: floatGlow2 10s ease-in-out infinite alternate;
+    }
+    @keyframes floatGlow {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(-40px,30px) scale(1.1); }
+    }
+    @keyframes floatGlow2 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(40px,-30px) scale(1.15); }
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(230,126,34,.15);
+      border: 1px solid rgba(230,126,34,.3);
+      border-radius: 50px;
+      padding: .35rem 1rem;
+      font-size: .7rem;
+      color: var(--orange-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+    .hero h1 .blue-light { color: var(--blue-light); }
+    .hero h1 .orange { color: var(--orange-light); }
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.7);
+      margin: 0 auto 2rem;
+      max-width: 600px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .hero-btn-branco {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: #fff;
+      color: var(--blue-deep);
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+    .hero-btn-branco:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,255,255,.2); }
+    .hero-btn-orange {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 15px rgba(230,126,34,.3);
+      animation: pulseOrange 2s ease-in-out infinite;
+    }
+    .hero-btn-orange:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(230,126,34,.4); animation: none; }
+    @keyframes pulseOrange {
+      0%, 100% { box-shadow: 0 4px 15px rgba(230,126,34,.3); transform: scale(1); }
+      50% { box-shadow: 0 8px 30px rgba(230,126,34,.55); transform: scale(1.03); }
+    }
+    .hero-btn-blue {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2.2rem;
+      background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all .3s ease;
+      box-shadow: 0 4px 15px rgba(26,82,118,.25);
+    }
+    .hero-btn-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,82,118,.35); }
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: rgba(255,255,255,.5);
+    }
+    .hero-trust-item i { color: var(--orange); font-size: .85rem; }
+
+    /* ═══════════════════════════════════════════
+       SEÇÃO COM IMAGEM DE FUNDO (GENÉRICA)
+       ═══════════════════════════════════════════ */
+    .section-bg {
+      position: relative;
+      overflow: hidden;
+    }
+    .section-bg-img {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .section-bg-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .section-bg-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1;
+    }
+    .section-bg-overlay.light {
+      background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(240,246,250,0.88) 50%, rgba(255,255,255,0.92) 100%);
+    }
+    .section-bg-overlay.medium {
+      background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(240,246,250,0.8) 50%, rgba(255,255,255,0.85) 100%);
+    }
+    .section-bg-overlay.dark {
+      background: linear-gradient(135deg, rgba(10,42,68,0.9) 0%, rgba(26,82,118,0.85) 50%, rgba(10,42,68,0.9) 100%);
+    }
+    .section-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ═══════════════════════════════════════════
+       SOBRE
+       ═══════════════════════════════════════════ */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .sobre-visual {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .sobre-visual img { width: 100%; display: block; }
+    .sobre-text h2 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .sobre-text h2 .blue { color: var(--blue-primary); }
+    .sobre-text h2 .orange { color: var(--orange); }
+    .sobre-text p { color: var(--text-light); line-height: 1.8; margin-bottom: .8rem; font-size: .92rem; }
+    .sobre-highlight {
+      border-left: 3px solid var(--orange);
+      padding: .8rem 1.2rem;
+      margin: 1.2rem 0;
+      background: var(--orange-pale);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: .88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .sobre-grid-mini { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 1.5rem; }
+    .sobre-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      background: rgba(26,82,118,.05);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: .82rem;
+    }
+    .sobre-item-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════
+       PRODUTOS
+       ═══════════════════════════════════════════ */
+    .produtos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .produto-card {
+      background: var(--white);
+      border: 1px solid rgba(10,42,68,0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all .4s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .produto-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(10,42,68,.15); }
+    .produto-img {
+      height: 220px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .produto-card.ant .produto-img { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+    .produto-card.bluwey .produto-img { background: linear-gradient(135deg, var(--blue-pale), #bbdefb); }
+    .produto-img img { width: 100%; height: 100%; object-fit: cover; }
+    .produto-tag {
+      position: absolute;
+      top: .8rem; left: .8rem;
+      padding: .25rem .8rem;
+      border-radius: 50px;
+      font-size: .6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .produto-card.ant .produto-tag { background: #2d6a4f; color: #fff; }
+    .produto-card.bluwey .produto-tag { background: var(--blue-primary); color: #fff; }
+    .produto-body { padding: 1.5rem; }
+    .produto-body h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: .15rem; }
+    .produto-card.ant .produto-body h3 { color: #2d6a4f; }
+    .produto-card.bluwey .produto-body h3 { color: var(--blue-primary); }
+    .produto-subtitulo { font-size: .75rem; color: var(--text-muted); font-weight: 500; margin-bottom: .6rem; }
+    .produto-desc { font-size: .85rem; color: var(--text-light); line-height: 1.7; margin-bottom: .8rem; }
+    .produto-beneficios { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; margin-bottom: 1rem; }
+    .produto-beneficio {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .75rem;
+      color: var(--text-light);
+    }
+    .produto-beneficio i {
+      font-size: .6rem;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .produto-card.ant .produto-beneficio i { color: #2d6a4f; background: #e8f5e9; }
+    .produto-card.bluwey .produto-beneficio i { color: var(--blue-primary); background: var(--blue-pale); }
+    .produto-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(10,42,68,0.08);
+    }
+    .produto-btn-saiba {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.3rem;
+      background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid));
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: .78rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .produto-btn-saiba:hover { transform: scale(1.04); box-shadow: 0 4px 15px rgba(26,82,118,.3); }
+
+    /* ═══════════════════════════════════════════
+       CIÊNCIA & P&D
+       ═══════════════════════════════════════════ */
+    .ciencia-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .ciencia-card {
+      background: var(--white);
+      border: 1px solid rgba(10,42,68,0.08);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .ciencia-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .ciencia-icon {
+      width: 60px; height: 60px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, var(--blue-pale), #bbdefb);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--blue-primary);
+    }
+    .ciencia-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .ciencia-card p { color: var(--text-light); font-size: .82rem; line-height: 1.7; }
+
+    /* ═══════════════════════════════════════════
+       FAMÍLIA
+       ═══════════════════════════════════════════ */
+    .familia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; align-items: center; }
+    .familia-text h2 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .familia-text h2 .blue { color: var(--blue-primary); }
+    .familia-text h2 .orange { color: var(--orange); }
+    .familia-text p { color: var(--text-light); line-height: 1.8; margin-bottom: .8rem; font-size: .92rem; }
+    .familia-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .familia-img img { width: 100%; display: block; }
+    .familia-valores { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 1.5rem; }
+    .familia-valor {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      background: rgba(230,126,34,.05);
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: .82rem;
+    }
+    .familia-valor i { color: var(--orange); }
+
+    /* ═══════════════════════════════════════════
+       NEGÓCIOS / PARCERIA
+       ═══════════════════════════════════════════ */
+    .negocios-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .negocio-card {
+      background: var(--white);
+      border: 1px solid rgba(10,42,68,0.08);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .negocio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .negocio-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 1rem;
+      background: linear-gradient(135deg, var(--orange-pale), #fdebd0);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--orange);
+    }
+    .negocio-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
+    .negocio-card p { color: var(--text-light); font-size: .82rem; line-height: 1.7; }
+
+    /* ═══════════════════════════════════════════
+       DEPOIMENTOS
+       ═══════════════════════════════════════════ */
+    .depo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.2rem; margin-top: 3rem; }
+    .depo-card {
+      background: var(--white);
+      border: 1px solid rgba(10,42,68,0.08);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: all .4s;
+      box-shadow: var(--shadow-sm);
+    }
+    .depo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .depo-estrelas { color: var(--orange); font-size: .85rem; margin-bottom: .6rem; letter-spacing: 2px; }
+    .depo-texto {
+      font-size: .88rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .depo-texto i { color: var(--orange); opacity: .4; font-size: .8rem; margin-right: .3rem; }
+    .depo-autor { display: flex; align-items: center; gap: .7rem; }
+    .depo-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-pale), var(--orange-pale));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--blue-primary);
+    }
+    .depo-nome { font-weight: 600; font-size: .85rem; color: var(--text); }
+    .depo-idade { font-size: .75rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════
+       SELOS / TRUST
+       ═══════════════════════════════════════════ */
+    .selos-grid { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+    .selo-item { text-align: center; padding: 1.5rem; }
+    .selo-item i { font-size: 2rem; color: var(--blue-primary); margin-bottom: .5rem; display: block; }
+    .selo-item h4 { font-size: .85rem; font-weight: 700; margin-bottom: .2rem; }
+    .selo-item p { font-size: .75rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════
+       CONTATO
+       ═══════════════════════════════════════════ */
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .contato-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contato-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--white);
+      border: 1px solid rgba(10,42,68,0.08);
+      border-radius: var(--radius-sm);
+      transition: all .3s;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .contato-card:hover { transform: translateX(4px); box-shadow: var(--shadow-sm); }
+    .contato-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .contato-card-icon.instagram { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: #fff; }
+    .contato-card-icon.facebook { background: #1877f2; color: #fff; }
+    .contato-card-icon.whatsapp { background: #25D366; color: #fff; }
+    .contato-card-icon.store { background: linear-gradient(135deg, var(--blue-primary), var(--blue-mid)); color: #fff; }
+    .contato-card-icon.site { background: linear-gradient(135deg, var(--orange), var(--orange-light)); color: #fff; }
+    .contato-card h4 { font-size: .9rem; font-weight: 700; margin-bottom: .1rem; }
+    .contato-card p { font-size: .8rem; color: var(--text-light); }
+    .contato-card .handle { color: var(--blue-primary); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════ */
+    .cta-section {
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section .section-bg-img img { filter: brightness(0.3); }
+    .cta-box { text-align: center; position: relative; z-index: 2; }
+    .cta-box h2 { font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: .8rem; }
+    .cta-box h2 .orange { color: var(--orange-light); }
+    .cta-box h2 .blue-light { color: var(--blue-light); }
+    .cta-box p { color: rgba(255,255,255,.6); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ */
+    footer {
+      background: var(--blue-deep);
+      color: rgba(255,255,255,.5);
+      padding: 3.5rem 1.5rem 2rem;
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-primary), var(--orange), var(--blue-primary));
+    }
+    .footer-grid { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
+    .footer-brand h4 { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: .6rem; }
+    .footer-brand h4 .blue { color: var(--blue-light); }
+    .footer-brand h4 .orange { color: var(--orange-light); }
+    .footer-brand p { font-size: .82rem; line-height: 1.8; max-width: 320px; }
+    .footer-col h5 { color: #fff; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+    .footer-col a { display: block; color: rgba(255,255,255,.5); text-decoration: none; font-size: .82rem; margin-bottom: .5rem; transition: color .3s; }
+    .footer-col a:hover { color: var(--orange-light); }
+    .footer-social { display: flex; gap: .8rem; margin-top: .5rem; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .9rem;
+      transition: all .3s;
+      text-decoration: none;
+    }
+    .footer-social a.ig { background: linear-gradient(135deg, #f58529, #dd2a7b); }
+    .footer-social a.fb { background: #1877f2; }
+    .footer-social a.wpp { background: #25D366; }
+    .footer-social a:hover { transform: translateY(-3px); }
+    .footer-bottom {
+      max-width: 1120px; margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .78rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       WHATSAPP FLOAT
+       ═══════════════════════════════════════════ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem; right: 1.5rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      align-items: flex-end;
+    }
+    .whatsapp-float-btn {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .6rem 1.2rem;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .78rem;
+      box-shadow: 0 4px 15px rgba(37,211,102,.25);
+      transition: all .3s;
+    }
+    .whatsapp-float-btn:hover { transform: scale(1.05); }
+
+    /* ═══════════════════════════════════════════
+       DECORAÇÕES
+       ═══════════════════════════════════════════ */
+    .deco-dots {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .deco-dots-1 {
+      top: 10%; right: 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 8px);
+      gap: 8px;
+    }
+    .deco-dots-1 span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      opacity: .08;
+    }
+    .deco-dots-2 {
+      bottom: 10%; left: 5%;
+      display: grid;
+      grid-template-columns: repeat(3, 6px);
+      gap: 6px;
+    }
+    .deco-dots-2 span {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue-primary);
+      opacity: .06;
+    }
+    .deco-line {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .deco-line-1 {
+      width: 200px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+      opacity: .1;
+      top: 5%; left: 10%;
+      transform: rotate(-5deg);
+    }
+    .deco-line-2 {
+      width: 150px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue-primary), transparent);
+      opacity: .08;
+      bottom: 8%; right: 15%;
+      transform: rotate(3deg);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+      .section-title { font-size: 2rem; }
+    }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .menu-toggle { display: block; }
+      .nav-mobile { display: flex; }
+      .hero h1 { font-size: 2.4rem; }
+      .sobre-grid { grid-template-columns: 1fr; text-align: center; }
+      .sobre-grid-mini { grid-template-columns: 1fr; }
+      .sobre-highlight { text-align: left; }
+      .produtos-grid { grid-template-columns: 1fr; }
+      .familia-grid { grid-template-columns: 1fr; text-align: center; }
+      .familia-valores { grid-template-columns: 1fr; }
+      .ciencia-grid { grid-template-columns: 1fr 1fr; }
+      .negocios-grid { grid-template-columns: 1fr 1fr; }
+      .depo-grid { grid-template-columns: 1fr 1fr; }
+      .contato-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-social { justify-content: center; }
+    }
+    @media (max-width: 600px) {
+      html { font-size: 15px; }
+      .section, section { padding: 3.5rem 0; }
+      .hero { padding: 5rem 1rem 3rem; }
+      .hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.7rem; }
+      .produtos-grid { gap: 1.2rem; }
+      .produto-img { height: 180px; }
+      .produto-body { padding: 1.2rem; }
+      .produto-beneficios { grid-template-columns: 1fr; }
+      .ciencia-grid { grid-template-columns: 1fr; }
+      .negocios-grid { grid-template-columns: 1fr; }
+      .depo-grid { grid-template-columns: 1fr; }
+      .cta-box h2 { font-size: 1.6rem; }
+      .whatsapp-float { right: .8rem; bottom: .8rem; }
+      .whatsapp-float-btn { padding: .5rem 1rem; font-size: .72rem; }
+      .header { padding: .7rem 1rem; }
+      .hero-trust { gap: 1rem; }
+      .hero-trust-item { font-size: .7rem; }
+      .familia-valores { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <a href="#" class="header-logo">
+      <img src="../Informações/Logo%20Bluant.png" alt="Bluant Logo" class="header-logo-img" onerror="this.style.display='none'" />
+      <span class="header-logo-text"><span class="blue">Blu</span><span class="orange">ant</span></span>
+    </a>
+    <nav class="nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#ciencia">Ciência</a>
+      <a href="#familia">Família</a>
+      <a href="#negocios">Negócios</a>
+      <a href="#contato">Contato</a>
+      <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20Bluant." target="_blank" class="nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile" id="navMobile">
+    <button class="nav-mobile-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+    <a href="#produtos" onclick="toggleMenu()">Produtos</a>
+    <a href="#ciencia" onclick="toggleMenu()">Ciência</a>
+    <a href="#familia" onclick="toggleMenu()">Família</a>
+    <a href="#negocios" onclick="toggleMenu()">Negócios</a>
+    <a href="#contato" onclick="toggleMenu()">Contato</a>
+    <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Tenho%20interesse%20nos%20suplementos%20da%20Bluant." target="_blank" onclick="toggleMenu()" style="background:#25D366;padding:.8rem 2rem;border-radius:50px;font-size:1rem;color:#fff"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="../Informações/Tela%20inicial.png" alt="Bluant" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-leaf"></i> 100% Natural — Registro ANVISA</div>
+      <h1>
+        <span class="blue-light">Bluant</span>: saúde que<br>
+        <span class="orange">transforma</span> vidas
+      </h1>
+      <p>
+        Suplementos premium <strong>100% naturais</strong> desenvolvidos por especialistas em nutrição.
+        <strong>AN-T</strong> para saúde articular e <strong>Bluwey</strong> para vitalidade masculina —
+        qualidade que vai do laboratório até você.
+      </p>
+      <div class="hero-actions">
+        <a href="#produtos" class="hero-btn-branco"><i class="fas fa-flask"></i> Conhecer Produtos</a>
+        <a href="https://neitzelcomercial-cell.github.io/SUPLEBLUANT/" target="_blank" class="hero-btn-orange"><i class="fas fa-store"></i> Loja Virtual</a>
+        <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20Bluant." target="_blank" class="hero-btn-blue"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item"><i class="fas fa-check-circle"></i> Registro ANVISA</span>
+        <span class="hero-trust-item"><i class="fas fa-leaf"></i> 100% Natural</span>
+        <span class="hero-trust-item"><i class="fas fa-flask"></i> +150 Fórmulas</span>
+        <span class="hero-trust-item"><i class="fas fa-star"></i> Clientes Satisfeitos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SOBRE A BLUANT
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="sobre">
+    <div class="section-bg-img">
+      <img src="../Informações/Sobre%20a%20empresa.png" alt="Bluant" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="deco-dots deco-dots-1">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="container section-content">
+      <div class="sobre-grid">
+        <div class="sobre-visual fade-up">
+          <img src="../Informações/Gemini_Generated_Image_gclcn7gclcn7gclc.png" alt="Bluant" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect width=%22400%22 height=%22300%22 fill=%22%23d6eaf8%22 rx=%2216%22/><text x=%22200%22 y=%22140%22 text-anchor=%22middle%22 font-size=%2260%22>🌿</text><text x=%22200%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%231a5276%22 font-size=%2222%22>Bluant</text></svg>'"/>
+        </div>
+        <div class="sobre-text fade-up">
+          <span class="section-tag"><i class="fas fa-seedling"></i> Nossa História</span>
+          <h2>Compromisso com sua <span class="blue">saúde</span> e <span class="orange">bem-estar</span></h2>
+          <p>
+            A <strong>Bluant</strong>, em parceria com a <strong>Morbach Nutri</strong>, nasceu da união entre
+            profissionais de nutrição que acreditam no poder transformador dos ativos naturais.
+            Cada produto é formulado com ingredientes selecionados e rigoroso controle de qualidade.
+          </p>
+          <div class="sobre-highlight">
+            <strong>+150 fórmulas desenvolvidas</strong> por especialistas em nutrição —
+            cada uma pensada para entregar resultados reais com o mais alto padrão de excelência.
+            Do laboratório até você, todo o processo é monitorado para garantir a pureza e potência de cada cápsula.
+          </div>
+          <p>
+            A Bluant, em parceria com a Morbach Nutri, combina visão inovadora em suplementos premium
+            com décadas de expertise em nutrição. Juntas, entregam o que há de melhor em suplementação natural.
+          </p>
+          <div class="sobre-grid-mini">
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-leaf"></i></div>100% Ingredientes Naturais</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-shield-alt"></i></div>Registro ANVISA</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-flask"></i></div>+150 Fórmulas Exclusivas</div>
+            <div class="sobre-item"><div class="sobre-item-icon"><i class="fas fa-heart"></i></div>Resultados Reais</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SELOS DE QUALIDADE
+       ═══════════════════════════════════════════ -->
+  <div class="section section-bg" style="padding:3rem 0;">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_6fdtcp6fdtcp6fdt.png" alt="" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="container section-content">
+      <div class="selos-grid">
+        <div class="selo-item fade-up">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Registro ANVISA</h4>
+          <p>Produtos regularizados e aprovados</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-leaf"></i>
+          <h4>100% Natural</h4>
+          <p>Zero aditivos químicos ou sintéticos</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-trophy"></i>
+          <h4>+150 Fórmulas</h4>
+          <p>Expertise em nutrição e desenvolvimento</p>
+        </div>
+        <div class="selo-item fade-up">
+          <i class="fas fa-star"></i>
+          <h4>Clientes Satisfeitos</h4>
+          <p>Recomendado por quem usa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PRODUTOS
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="produtos">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_pv39wypv39wypv39.png" alt="" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="deco-line deco-line-1"></div>
+    <div class="deco-line deco-line-2"></div>
+    <div class="container section-content">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-flask"></i> Nossos Produtos</span>
+        <h2 class="section-title"><span class="blue">AN-T</span> & <span class="orange">Bluwey</span></h2>
+        <p class="section-desc mx-auto">Dois produtos premium com registro ANVISA, 100% ativos naturais, desenvolvidos por especialistas em nutrição para saúde, energia e qualidade de vida.</p>
+      </div>
+      <div class="produtos-grid">
+        <!-- AN-T -->
+        <div class="produto-card ant fade-up">
+          <div class="produto-img">
+            <img src="../Informações/info%20an-t.png" alt="AN-T" onerror="this.style.display='none'" />
+            <span class="produto-tag">Mais Vendido</span>
+          </div>
+          <div class="produto-body">
+            <h3>AN-T</h3>
+            <div class="produto-subtitulo">🌿 Saúde Articular & Bem-Estar</div>
+            <p class="produto-desc">
+              Suplemento premium desenvolvido para alívio de dores crônicas e agudas, equilíbrio nervoso
+              e redução de processos inflamatórios. Composto por cálcio, magnésio, vitaminas C, K2 e D3,
+              cúrcuma, MSM, colágeno tipo 2, condroitina e manganês.
+            </p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Alívio de dores crônicas e agudas</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Redução de inflamações</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Equilíbrio nervoso</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Fortalecimento da imunidade</span>
+            </div>
+            <div class="produto-footer">
+              <div style="font-size:.8rem;color:var(--text-muted)">Registro ANVISA • 1 cápsula ao dia</div>
+              <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20AN-T%20da%20Bluant." target="_blank" class="produto-btn-saiba"><i class="fab fa-whatsapp"></i> Saber Mais</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bluwey -->
+        <div class="produto-card bluwey fade-up">
+          <div class="produto-img">
+            <img src="../Informações/sobre-bluwey.png" alt="Bluwey" onerror="this.style.display='none'" />
+            <span class="produto-tag">Sucesso</span>
+          </div>
+          <div class="produto-body">
+            <h3>Bluwey</h3>
+            <div class="produto-subtitulo">💪 Saúde Sexual & Energia Vital</div>
+            <p class="produto-desc">
+              Suplemento 100% natural que está transformando a saúde masculina. Sua fórmula exclusiva
+              aumenta a energia, eleva a libido, prolonga a duração e melhora a saúde geral —
+              devolvendo a vitalidade e o bem-estar para homens que enfrentam o desgaste da rotina.
+            </p>
+            <div class="produto-beneficios">
+              <span class="produto-beneficio"><i class="fas fa-check"></i> 100% natural</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Aumenta a energia</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Eleva a libido</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Prolonga a duração</span>
+              <span class="produto-beneficio"><i class="fas fa-check"></i> Melhora a saúde geral</span>
+            </div>
+            <div class="produto-footer">
+              <div style="font-size:.8rem;color:var(--text-muted)">Registro ANVISA • 1 cápsula ao dia</div>
+              <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Bluwey%20da%20Bluant." target="_blank" class="produto-btn-saiba"><i class="fab fa-whatsapp"></i> Saber Mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CIÊNCIA & P&D
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="ciencia">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_gujh4fgujh4fgujh.png" alt="Ciência e pesquisa" />
+    </div>
+    <div class="section-bg-overlay medium"></div>
+    <div class="deco-dots deco-dots-2"></div>
+    <div class="container section-content">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-microscope"></i> Pesquisa & Desenvolvimento</span>
+        <h2 class="section-title">Ciência por trás dos <span class="blue">resultados</span></h2>
+        <p class="section-desc mx-auto">Cada fórmula nasce de pesquisa rigorosa, seleção criteriosa de matérias-primas e testes de eficácia que garantem a pureza e potência de cada cápsula.</p>
+      </div>
+      <div class="ciencia-grid">
+        <div class="ciencia-card fade-up">
+          <div class="ciencia-icon"><i class="fas fa-flask"></i></div>
+          <h3>P&D Contínuo</h3>
+          <p>Inovação constante em cada fórmula. Nossa equipe de especialistas trabalha diariamente para desenvolver as melhores combinações de ativos naturais.</p>
+        </div>
+        <div class="ciencia-card fade-up">
+          <div class="ciencia-icon"><i class="fas fa-seedling"></i></div>
+          <h3>Matérias-Primas Selecionadas</h3>
+          <p>Seleção criteriosa dos melhores ingredientes do mercado. Cada matéria-prima passa por rigorosa avaliação antes de ser aprovada para uso em nossas fórmulas.</p>
+        </div>
+        <div class="ciencia-card fade-up">
+          <div class="ciencia-icon"><i class="fas fa-clipboard-check"></i></div>
+          <h3>Testes de Eficácia</h3>
+          <p>Rigorosos controles de pureza e potência em cada lote produzido. Do laboratório até você, todo o processo é monitorado para entregar excelência.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FAMÍLIA
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="familia">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_m4vf6hm4vf6hm4vf.png" alt="Família" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="container section-content">
+      <div class="familia-grid">
+        <div class="familia-text fade-up">
+          <span class="section-tag"><i class="fas fa-heart"></i> Família Bluant</span>
+          <h2>Saúde que <span class="blue">une</span> e <span class="orange">transforma</span> famílias</h2>
+          <p>
+            Acreditamos que a verdadeira saúde começa em casa. Por isso, cada produto Bluant é pensado
+            para cuidar de quem você ama — dos mais jovens aos mais experientes. Nossa missão é levar
+            qualidade de vida para todas as famílias brasileiras.
+          </p>
+          <p>
+            Seja para aliviar dores articulares com o <strong>AN-T</strong> ou recuperar a vitalidade
+            com o <strong>Bluwey</strong>, nossos suplementos são feitos para transformar o bem-estar
+            de toda a família.
+          </p>
+          <div class="familia-valores">
+            <div class="familia-valor"><i class="fas fa-heart"></i> Cuidado com quem você ama</div>
+            <div class="familia-valor"><i class="fas fa-leaf"></i> Produtos naturais para todos</div>
+            <div class="familia-valor"><i class="fas fa-hand-holding-heart"></i> Qualidade que inspira confiança</div>
+            <div class="familia-valor"><i class="fas fa-users"></i> Famílias mais saudáveis</div>
+          </div>
+        </div>
+        <div class="familia-img fade-up">
+          <img src="../Informações/Gemini_Generated_Image_yr6559yr6559yr65.png" alt="Família Bluant" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 500 400%22><rect width=%22500%22 height=%22400%22 fill=%22%23fef5e7%22 rx=%2216%22/><text x=%22250%22 y=%22200%22 text-anchor=%22middle%22 font-size=%2260%22>👨‍👩‍👧‍👦</text><text x=%22250%22 y=%22260%22 text-anchor=%22middle%22 fill=%22%23e67e22%22 font-size=%2222%22>Família Bluant</text></svg>'"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       NEGÓCIOS & PARCERIA
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="negocios">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_6fdtcp6fdtcp6fdt.png" alt="Negócios" />
+    </div>
+    <div class="section-bg-overlay medium"></div>
+    <div class="container section-content">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-handshake"></i> Parceria Estratégica</span>
+        <h2 class="section-title"><span class="blue">Bluant</span> × <span class="orange">Morbach Nutri</span></h2>
+        <p class="section-desc mx-auto">Uma união estratégica entre duas marcas comprometidas com a saúde e bem-estar. De um lado, a Bluant com sua visão inovadora; do outro, a Morbach Nutri com décadas de expertise em nutrição.</p>
+      </div>
+      <div class="negocios-grid">
+        <div class="negocio-card fade-up">
+          <div class="negocio-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Visão Inovadora</h3>
+          <p>A Bluant traz uma abordagem moderna e inovadora para o mercado de suplementos, combinando ciência e natureza em cada fórmula.</p>
+        </div>
+        <div class="negocio-card fade-up">
+          <div class="negocio-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Expertise em Nutrição</h3>
+          <p>A Morbach Nutri contribui com décadas de conhecimento e mais de 150 fórmulas desenvolvidas por especialistas em nutrição.</p>
+        </div>
+        <div class="negocio-card fade-up">
+          <div class="negocio-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Resultados Comprovados</h3>
+          <p>Juntas, combinam conhecimento e qualidade premium para transformar vidas através de ativos 100% naturais com registro ANVISA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DEPOIMENTOS
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="depoimentos">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_gclcn7gclcn7gclc.png" alt="" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="container section-content">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-comments"></i> Clientes Reais</span>
+        <h2 class="section-title">Quem já usou <span class="blue">recomenda</span></h2>
+        <p class="section-desc mx-auto">Veja o que nossos clientes estão dizendo sobre os resultados.</p>
+      </div>
+      <div class="depo-grid">
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>O AN-T transformou minha qualidade de vida. As dores sumiram e me sinto muito mais disposto. Produto excepcional!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">CM</div>
+            <div>
+              <div class="depo-nome">Carlos M.</div>
+              <div class="depo-idade">54 anos • Joinville</div>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Bluwey superou minhas expectativas. Energia total e resultados incríveis em poucas semanas. Produto de altíssima qualidade!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">RS</div>
+            <div>
+              <div class="depo-nome">Roberto S.</div>
+              <div class="depo-idade">48 anos • Garuva</div>
+            </div>
+          </div>
+        </div>
+        <div class="depo-card fade-up">
+          <div class="depo-estrelas">★★★★★</div>
+          <p class="depo-texto"><i class="fas fa-quote-left"></i>Produtos de altíssima qualidade. Nota-se a diferença dos suplementos convencionais. Atendimento excelente também!</p>
+          <div class="depo-autor">
+            <div class="depo-avatar">AL</div>
+            <div>
+              <div class="depo-nome">Antônio L.</div>
+              <div class="depo-idade">62 anos • Joinville</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CONTATO
+       ═══════════════════════════════════════════ -->
+  <section class="section section-bg" id="contato">
+    <div class="section-bg-img">
+      <img src="../Informações/vendedores.jpeg" alt="Contato" />
+    </div>
+    <div class="section-bg-overlay light"></div>
+    <div class="container section-content">
+      <div class="text-center fade-up">
+        <span class="section-tag"><i class="fas fa-phone-alt"></i> Fale Conosco</span>
+        <h2 class="section-title">Entre em <span class="orange">contato</span></h2>
+        <p class="section-desc mx-auto">Estamos prontos para atender você. Tire dúvidas, peça recomendações ou faça seu pedido.</p>
+      </div>
+      <div class="contato-grid">
+        <div class="contato-info">
+          <a href="https://www.instagram.com/blusuplemento/" target="_blank" class="contato-card fade-up">
+            <div class="contato-card-icon instagram"><i class="fab fa-instagram"></i></div>
+            <div>
+              <h4>Instagram</h4>
+              <p class="handle">@blusuplemento</p>
+              <p style="font-size:.75rem;color:var(--text-muted)">Acompanhe novidades e promoções</p>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/blusuplementos" target="_blank" class="contato-card fade-up">
+            <div class="contato-card-icon facebook"><i class="fab fa-facebook-f"></i></div>
+            <div>
+              <h4>Facebook</h4>
+              <p class="handle">blusuplementos</p>
+              <p style="font-size:.75rem;color:var(--text-muted)">Siga nossa página</p>
+            </div>
+          </a>
+          <a href="https://wa.me/5547984202188" target="_blank" class="contato-card fade-up">
+            <div class="contato-card-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p class="handle">(47) 98420-2188</p>
+              <p style="font-size:.75rem;color:var(--text-muted)">Atendimento rápido e personalizado</p>
+            </div>
+          </a>
+        </div>
+        <div class="contato-info">
+          <a href="https://neitzelcomercial-cell.github.io/SUPLEBLUANT/" target="_blank" class="contato-card fade-up">
+            <div class="contato-card-icon store"><i class="fas fa-shopping-cart"></i></div>
+            <div>
+              <h4>Loja Virtual</h4>
+              <p style="font-size:.75rem;color:var(--text-muted)">Compre online pelo nosso site</p>
+              <p style="font-size:.7rem;color:var(--blue-primary);word-break:break-all">neitzelcomercial-cell.github.io/SUPLEBLUANT/</p>
+            </div>
+          </a>
+          <a href="https://neitzelcomercial-cell.github.io/SUPLEBLUANT/" target="_blank" class="contato-card fade-up">
+            <div class="contato-card-icon site"><i class="fas fa-store-alt"></i></div>
+            <div>
+              <h4>Marketplace</h4>
+              <p style="font-size:.75rem;color:var(--text-muted)">Vendemos também em nosso marketplace</p>
+              <p style="font-size:.7rem;color:var(--orange);word-break:break-all">neitzelcomercial-cell.github.io/SUPLEBLUANT/</p>
+            </div>
+          </a>
+          <div class="contato-card fade-up" style="cursor:default">
+            <div class="contato-card-icon" style="background:linear-gradient(135deg,var(--blue-pale),var(--orange-pale));color:var(--blue-primary)"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Pontos de Retirada</h4>
+              <p style="font-size:.75rem;color:var(--text-light)">📍 Joinville — Rua XV de Outubro, 180 (Barbearia Barba Negra LN)</p>
+              <p style="font-size:.75rem;color:var(--text-light)">📍 Garuva — Rua Salvador Oliva, 88</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════ -->
+  <section class="cta-section section-bg">
+    <div class="section-bg-img">
+      <img src="../Informações/Gemini_Generated_Image_yr6559yr6559yr65.png" alt="" />
+    </div>
+    <div class="section-bg-overlay dark"></div>
+    <div class="container section-content">
+      <div class="cta-box fade-up">
+        <h2>Pronto para <span class="orange">transformar sua saúde</span>?</h2>
+        <p>AN-T e Bluwey: suplementos 100% naturais com registro ANVISA para quem quer qualidade de vida de verdade.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20Bluant." target="_blank" class="btn-whatsapp" style="font-size:1rem;padding:1rem 2.5rem"><i class="fab fa-whatsapp"></i> Fale Conosco Agora</a>
+          <a href="https://neitzelcomercial-cell.github.io/SUPLEBLUANT/" target="_blank" class="btn-primary" style="background:linear-gradient(135deg,var(--orange),var(--orange-light));box-shadow:0 4px 20px rgba(230,126,34,.25)"><i class="fas fa-store"></i> Visitar Loja</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4><span class="blue">Blu</span><span class="orange">ant</span></h4>
+        <p>AN-T e Bluwey — suplementos premium 100% naturais com registro ANVISA. +150 fórmulas desenvolvidas por especialistas em nutrição. Saúde que transforma.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/blusuplemento/" target="_blank" class="ig" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/blusuplementos" target="_blank" class="fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/5547984202188" target="_blank" class="wpp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Produtos</h5>
+        <a href="#produtos">AN-T — Saúde Articular</a>
+        <a href="#produtos">Bluwey — Saúde Masculina</a>
+        <a href="#ciencia">Pesquisa & Desenvolvimento</a>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <a href="#sobre">Sobre a Bluant</a>
+        <a href="#familia">Família Bluant</a>
+        <a href="#negocios">Parceria Estratégica</a>
+      </div>
+      <div class="footer-col">
+        <h5>Atendimento</h5>
+        <a href="https://wa.me/5547984202188" target="_blank">WhatsApp: (47) 98420-2188</a>
+        <a href="https://www.instagram.com/blusuplemento/" target="_blank">Instagram: @blusuplemento</a>
+        <a href="https://www.facebook.com/blusuplementos" target="_blank">Facebook: blusuplementos</a>
+        <a href="https://neitzelcomercial-cell.github.io/SUPLEBLUANT/" target="_blank">Loja Virtual</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bluant — Todos os direitos reservados.</span>
+      <span>Produtos 100% Naturais • Registro ANVISA • Qualidade Premium</span>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5547984202188?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20suplementos%20Bluant." target="_blank" class="whatsapp-float-btn"><i class="fab fa-whatsapp"></i> Fale Conosco</a>
+  </div>
+
+  <script>
+    // Header scroll
+    window.addEventListener('scroll', function() {
+      var h = document.getElementById('header');
+      if (window.scrollY > 80) h.classList.add('scrolled');
+      else h.classList.remove('scrolled');
+    });
+
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('navMobile').classList.toggle('active');
+    }
+
+    // Scroll animations
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

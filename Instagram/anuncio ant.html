@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AN-T — Anúncio Profissional | BluAnt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .page {
+      width: 297mm;
+      height: 210mm;
+      margin: 0 auto;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    :root {
+      --orange: #e67e22;
+      --orange-light: #f39c12;
+      --orange-pale: #fef3e7;
+      --orange-soft: rgba(230,126,34,0.06);
+      --orange-mid: rgba(230,126,34,0.12);
+      --orange-dark: #d35400;
+    }
+
+    /* ── Bordas laranja ── */
+    .border-frame {
+      position: absolute;
+      inset: 3px;
+      border: 1px solid rgba(230,126,34,0.07);
+      pointer-events: none;
+      z-index: 9;
+    }
+    .border-frame-inner {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(230,126,34,0.04);
+      pointer-events: none;
+      z-index: 9;
+    }
+
+    /* ── Cantos decorativos ── */
+    .corner {
+      position: absolute;
+      width: 36px; height: 36px;
+      z-index: 10;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .corner::before {
+      content: '';
+      width: 18px; height: 18px;
+      border: 2px solid rgba(230,126,34,0.15);
+    }
+    .corner.tl { top: 10px; left: 10px; }
+    .corner.tl::before { border-right: none; border-bottom: none; border-radius: 3px 0 0 0; }
+    .corner.tr { top: 10px; right: 10px; }
+    .corner.tr::before { border-left: none; border-bottom: none; border-radius: 0 3px 0 0; }
+    .corner.bl { bottom: 10px; left: 10px; }
+    .corner.bl::before { border-right: none; border-top: none; border-radius: 0 0 0 3px; }
+    .corner.br { bottom: 10px; right: 10px; }
+    .corner.br::before { border-left: none; border-top: none; border-radius: 0 0 3px 0; }
+
+    /* ── Imagem de fundo — família ── */
+    .bg-family {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .bg-family img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .bg-family::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.85) 0%,
+        rgba(255,255,255,0.6) 30%,
+        rgba(255,255,255,0.75) 60%,
+        rgba(255,255,255,0.88) 100%
+      );
+    }
+
+    /* ── Faixas laranja ── */
+    .ribbon {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--orange-soft) 10%,
+        rgba(230,126,34,0.15) 30%,
+        var(--orange-mid) 50%,
+        rgba(230,126,34,0.15) 70%,
+        var(--orange-soft) 90%,
+        transparent 100%
+      );
+      z-index: 1;
+    }
+    .ribbon-bot {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--orange-soft) 10%,
+        rgba(230,126,34,0.15) 30%,
+        var(--orange-mid) 50%,
+        rgba(230,126,34,0.15) 70%,
+        var(--orange-soft) 90%,
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    /* ── Watermark logo BluAnt ── */
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+      opacity: 0.025;
+      width: 50%;
+      max-width: 420px;
+    }
+    .watermark img { width: 100%; height: auto; display: block; }
+
+    /* ── Círculos decorativos laranja ── */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .dc-1 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(230,126,34,0.04) 0%, transparent 70%);
+      top: -80px; right: 10%;
+    }
+    .dc-2 {
+      width: 200px; height: 200px;
+      border: 1px solid rgba(230,126,34,0.04);
+      bottom: -60px; left: 25%;
+    }
+    .dc-3 {
+      width: 120px; height: 120px;
+      border: 1px solid rgba(230,126,34,0.03);
+      top: 40%; left: 5%;
+    }
+    .dc-4 {
+      width: 80px; height: 80px;
+      background: radial-gradient(circle, rgba(230,126,34,0.03) 0%, transparent 70%);
+      bottom: 20%; right: 8%;
+    }
+
+    /* ── Detalhes laranja (linhas sutis) ── */
+    .orange-line {
+      position: absolute;
+      height: 1px;
+      background: rgba(230,126,34,0.06);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .ol-1 { width: 120px; top: 18%; left: 3%; transform: rotate(15deg); }
+    .ol-2 { width: 80px; bottom: 25%; right: 3%; transform: rotate(-10deg); }
+
+    /* ═══ LAYOUT ═══ */
+    .content {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      gap: 0.8rem;
+    }
+
+    /* ═══ COLUNA 1 — Produto (BEM MAIOR) ═══ */
+    .col-product {
+      width: 36%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .brand-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand-bar img { height: 40px; width: auto; border-radius: 6px; }
+    .brand-bar span {
+      font-size: 1rem;
+      font-weight: 800;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .product-img {
+      width: 250px;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.02);
+      background: linear-gradient(160deg, #fef3e7, #f5d6b8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .product-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .product-img img {
+      width: 100%; height: 100%;
+      object-fit: contain; display: block;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.06));
+    }
+
+    .product-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #1a2a3a;
+      letter-spacing: 4px;
+      line-height: 1;
+    }
+    .product-sub {
+      font-size: 0.45rem;
+      color: rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 500;
+    }
+
+    .badge-natural {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--orange-soft);
+      border: 1px solid rgba(230,126,34,0.08);
+      border-radius: 50px;
+      padding: 0.15rem 0.8rem;
+      font-size: 0.4rem;
+      color: var(--orange);
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* ═══ COLUNA 2 — Centralizada ═══ */
+    .col-info {
+      width: 36%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .slogan {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #1a2a3a;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .slogan .orange { color: #d35400; }
+    .slogan .gold { color: #b8862d; }
+
+    .desc-text {
+      font-size: 0.65rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.7;
+      font-weight: 400;
+      max-width: 320px;
+      text-align: center;
+    }
+    .desc-text strong { color: rgba(0,0,0,0.75); font-weight: 600; }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem 0.8rem;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(230,126,34,0.06);
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      width: 100%;
+      max-width: 320px;
+    }
+    .benefits-grid .b {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-align: left;
+    }
+    .benefits-grid .b i {
+      font-size: 0.35rem;
+      color: #fff;
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefits-grid .b span {
+      font-size: 0.5rem;
+      color: rgba(0,0,0,0.55);
+      line-height: 1.4;
+    }
+    .benefits-grid .b strong { color: rgba(0,0,0,0.8); font-weight: 600; }
+
+    /* ── Preço ── */
+    .price-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(230,126,34,0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+    }
+    .price-block .col { display: flex; flex-direction: column; align-items: center; gap: 0.05rem; }
+    .price-block .old { font-size: 0.6rem; color: rgba(0,0,0,0.25); text-decoration: line-through; }
+    .price-block .current {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #1a2a3a;
+      line-height: 1;
+    }
+    .price-block .current .sym { font-size: 0.9rem; color: rgba(0,0,0,0.25); vertical-align: super; }
+    .price-block .save {
+      font-size: 0.45rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--orange), var(--orange-light));
+      color: #fff;
+      padding: 0.15rem 0.7rem;
+      border-radius: 50px;
+      letter-spacing: 1px;
+    }
+
+    .seals {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .seals .s {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: rgba(255,255,255,0.5);
+      padding: 0.15rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .seals .s i { font-size: 0.5rem; color: var(--orange); opacity: 0.5; }
+    .seals .s span { font-size: 0.4rem; color: rgba(0,0,0,0.35); font-weight: 600; }
+
+    /* ═══ COLUNA 3 — Centralizada ═══ */
+    .col-seal {
+      width: 28%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: center;
+    }
+
+    /* ── Selo circular "MAIS VENDIDO" ── */
+    .stamp {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--orange);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(230,126,34,0.1);
+      position: relative;
+    }
+    .stamp::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(230,126,34,0.08);
+    }
+    .stamp i {
+      font-size: 0.7rem;
+      color: var(--orange);
+      margin-bottom: 0.05rem;
+    }
+    .stamp .top {
+      font-size: 0.35rem;
+      font-weight: 800;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.1;
+    }
+    .stamp .bot {
+      font-size: 0.3rem;
+      font-weight: 600;
+      color: rgba(230,126,34,0.35);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── Card ingredientes ── */
+    .ingredients-card {
+      width: 100%;
+      background: var(--orange-soft);
+      border: 1px solid rgba(230,126,34,0.05);
+      border-radius: 12px;
+      padding: 0.6rem 0.8rem;
+    }
+    .ingredients-card h5 {
+      font-size: 0.45rem;
+      font-weight: 600;
+      color: var(--orange);
+      opacity: 0.5;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 0.4rem;
+      text-align: center;
+    }
+    .ingredients-card h5 i { opacity: 0.6; }
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.2rem 0.4rem;
+    }
+    .ingredients-grid .ig {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .ingredients-grid .ig i {
+      font-size: 0.4rem;
+      color: var(--orange);
+      opacity: 0.2;
+    }
+    .ingredients-grid .ig span {
+      font-size: 0.4rem;
+      color: rgba(0,0,0,0.4);
+    }
+
+    /* ── Resultados ── */
+    .results-strip {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.3rem;
+    }
+    .results-strip .r {
+      text-align: center;
+      padding: 0.4rem 0.2rem;
+      background: var(--orange-soft);
+      border: 1px solid rgba(230,126,34,0.04);
+      border-radius: 8px;
+    }
+    .results-strip .r .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+    }
+    .results-strip .r .label {
+      font-size: 0.35rem;
+      color: rgba(0,0,0,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    /* ── Footer ── */
+    .footer-bar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.6rem 1.2rem;
+      border-top: 1px solid rgba(230,126,34,0.04);
+    }
+    .footer-bar .f {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .footer-bar .f i {
+      font-size: 0.35rem;
+      color: var(--orange);
+      opacity: 0.15;
+    }
+    .footer-bar .f span {
+      font-size: 0.38rem;
+      color: rgba(0,0,0,0.2);
+    }
+    .footer-bar .f strong { color: rgba(0,0,0,0.35); }
+
+    .page, .page * { cursor: default; }
+
+    @media print {
+      body { background: #fff !important; margin: 0; padding: 0; }
+      .page { width: 297mm; height: 210mm; box-shadow: none; border-radius: 0; }
+      .no-print { display: none !important; }
+    }
+
+    body {
+      background: #e8e8ed;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .page { box-shadow: 0 20px 60px rgba(0,0,0,0.06); border-radius: 3px; }
+    .btn-print {
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 50px;
+      color: rgba(0,0,0,0.3);
+      font-size: 0.6rem;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-print:hover { color: #000; border-color: rgba(0,0,0,0.15); }
+    .hint {
+      color: rgba(0,0,0,0.12);
+      font-size: 0.5rem;
+      margin-top: 0.3rem;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Imagem de fundo — família -->
+    <div class="bg-family">
+      <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=1200&q=80" alt="Família sorrindo">
+    </div>
+
+    <!-- Moldura decorativa laranja -->
+    <div class="border-frame"></div>
+    <div class="border-frame-inner"></div>
+    <div class="ribbon"></div>
+    <div class="ribbon-bot"></div>
+
+    <!-- Cantos -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <!-- Watermark -->
+    <div class="watermark">
+      <img src="Logo-Bluant.png" alt="">
+    </div>
+
+    <!-- Decoração laranja -->
+    <div class="deco-circle dc-1"></div>
+    <div class="deco-circle dc-2"></div>
+    <div class="deco-circle dc-3"></div>
+    <div class="deco-circle dc-4"></div>
+    <div class="orange-line ol-1"></div>
+    <div class="orange-line ol-2"></div>
+
+    <!-- ═══ CONTEÚDO ═══ -->
+    <div class="content">
+
+      <!-- COLUNA 1 — Produto -->
+      <div class="col-product">
+        <div class="brand-bar">
+          <img src="Logo-Bluant.png" alt="BluAnt" onerror="this.style.display='none'" />
+          <span>BluAnt</span>
+        </div>
+        <div class="product-img">
+          <img src="an-t.png" alt="AN-T">
+        </div>
+        <div class="product-title">AN-T</div>
+        <div class="product-sub">Suplemento Natural</div>
+        <div class="badge-natural"><i class="fas fa-leaf"></i> 100% NATURAL</div>
+      </div>
+
+      <!-- COLUNA 2 — Informações -->
+      <div class="col-info">
+        <div class="slogan">
+          "Combate à <span class="orange">inflamação</span><br>
+          com o poder da <span class="gold">natureza</span>"
+        </div>
+
+        <p class="desc-text">
+          Fórmula inovadora <strong>100% natural</strong> desenvolvida para
+          combater a inflamação, aliviar dores e proporcionar mais
+          <strong>qualidade de vida</strong> com ingredientes selecionados.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="b"><i class="fas fa-check"></i><span><strong>Dor crônica e aguda</strong> — alívio natural</span></div>
+          <div class="b"><i class="fas fa-check"></i><span><strong>Reduz inflamação</strong> e desconforto</span></div>
+          <div class="b"><i class="fas fa-check"></i><span><strong>Fortalece a imunidade</strong> naturalmente</span></div>
+          <div class="b"><i class="fas fa-check"></i><span><strong>Qualidade de vida</strong> e bem-estar</span></div>
+        </div>
+
+        <div class="price-block">
+          <div class="col">
+            <span class="old">De R$ 189,90</span>
+            <span class="current"><span class="sym">R$</span>144<span class="sym">,27</span></span>
+          </div>
+          <div class="col">
+            <span class="save">🔥 ECONOMIZE R$ 45,63</span>
+          </div>
+        </div>
+
+        <div class="seals">
+          <span class="s"><i class="fas fa-certificate"></i><span>Qualidade Premium</span></span>
+          <span class="s"><i class="fas fa-leaf"></i><span>100% Natural</span></span>
+          <span class="s"><i class="fas fa-shield-alt"></i><span>Registro ANVISA</span></span>
+          <span class="s"><i class="fas fa-star"></i><span>+500 Clientes</span></span>
+        </div>
+      </div>
+
+      <!-- COLUNA 3 — Selo + Ingredientes -->
+      <div class="col-seal">
+        <div class="stamp">
+          <i class="fas fa-crown"></i>
+          <span class="top">Mais<br>Vendido</span>
+          <span class="bot">BluAnt</span>
+        </div>
+
+        <div class="ingredients-card">
+          <h5><i class="fas fa-seedling"></i> Ingredientes Naturais</h5>
+          <div class="ingredients-grid">
+            <div class="ig"><i class="fas fa-circle"></i><span>Tribulus Terrestris</span></div>
+            <div class="ig"><i class="fas fa-circle"></i><span>Maca Peruana</span></div>
+            <div class="ig"><i class="fas fa-circle"></i><span>Ginseng</span></div>
+            <div class="ig"><i class="fas fa-circle"></i><span>Zinco Quelado</span></div>
+            <div class="ig"><i class="fas fa-circle"></i><span>Ashwagandha</span></div>
+            <div class="ig"><i class="fas fa-circle"></i><span>Vitamina D3</span></div>
+          </div>
+        </div>
+
+        <div class="results-strip">
+          <div class="r">
+            <div class="num">+150</div>
+            <div class="label">Fórmulas</div>
+          </div>
+          <div class="r">
+            <div class="num">+500</div>
+            <div class="label">Clientes</div>
+          </div>
+          <div class="r">
+            <div class="num">100%</div>
+            <div class="label">Natural</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-bar">
+      <div class="f">
+        <i class="fas fa-map-pin"></i>
+        <span><strong>Joinville</strong> — Rua XV de Outubro, 180 • Rio Bonito</span>
+      </div>
+      <div class="f">
+        <i class="fas fa-map-pin"></i>
+        <span><strong>Garuva</strong> — Rua Salvador Oliva, 88</span>
+      </div>
+      <div class="f">
+        <i class="fas fa-flask"></i>
+        <span><strong>+150 Fórmulas</strong> desenvolvidas por especialistas</span>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="btn-print no-print" onclick="window.print()">
+    <i class="fas fa-download"></i> Salvar como PDF / Imprimir (A4)
+  </button>
+  <div class="hint no-print">Anúncio A4 paisagem • decoração laranja • design profissional</div>
+
+</body>
+</html>

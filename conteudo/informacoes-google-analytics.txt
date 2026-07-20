@@ -1,0 +1,57 @@
+══════════════════════════════════════════════
+  GOOGLE ANALYTICS — INFORMAÇÕES DA CONTA
+══════════════════════════════════════════════
+
+Código (ID da propriedade): G-MPENDTYFWH
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🔗 ACESSO DIRETO AO ANALYTICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 Clique aqui: https://analytics.google.com/analytics/web/
+
+Faça login com a conta Google que você usou pra criar.
+Depois clique em "Administrador" → selecione a propriedade
+com o código G-MPENDTYFWH.
+
+📊 Relatório rápido de visitas:
+https://analytics.google.com/analytics/web/#/pG-MPENDTYFWH/reports/defaulthome
+
+(Se o link direto não funcionar, acesse pelo primeiro link)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PRINCIPAIS MÉTRICAS (esperar 24-48h)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+→ Usuários: quantas pessoas únicas visitaram
+→ Sessões: quantas visitas no total
+→ Visualizações de página: quantas páginas foram vistas
+→ Duração média: quanto tempo ficaram no site
+→ Taxa de rejeição: quantos saíram sem interagir
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  O QUE FOI INSTALADO NA LOJA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Arquivo: C:\Users\neitz\OneDrive\OKOK\Paginas HTML\index.html
+
+1. Google Analytics (tag) - monitora visitas
+2. Formulário de Lead - captura nome + WhatsApp + interesse
+   - Aparece após 30 segundos na página
+   - Aparece se a pessoa tentar sair
+   - Envia os dados pro WhatsApp do vendedor
+   - Salva no localStorage do navegador
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  COMO PUBLICAR AS ALTERAÇÕES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se você usa GitHub:
+  1. Faça login em https://github.com
+  2. Vá no repositório SUPLEBLUANT
+  3. Faça upload do arquivo index.html atualizado
+  4. Substitua o arquivo antigo
+
+Se você usa outro serviço, o processo é similar.
+
+══════════════════════════════════════════════
